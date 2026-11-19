@@ -33,11 +33,11 @@ Stories from 17/18 Nov are deliberately NOT heroes (criterion 1, lexicographic).
 
 AMERICAS
 - Jeffries set to be first Black House Speaker (Democrats nominate) — BBC/NDTV, 19 Nov.
-- Fed minutes: most officials expect further rate hikes — 19 Nov.
-- Canada adjusts China ties, Carney seeks right US deal — 19 Nov.
+- US senators warn AI cyber threats outpacing defences — JagranJosh, 19 Nov.
+- US approves $1.6B aid package to Ukraine — NewsBites, 19 Nov.
 
 EUROPE
-- EU proposes €45bn Ukraine loan, repaid after Russia pays reparations — 19 Nov.
+- Zelensky accuses US of blocking missile deliveries — Germany Eye, 19 Nov.
 - Estonia to close Russia border crossings from December — announced 19 Nov.
 - Prague: hundreds of thousands protest for media independence — 19 Nov.
 - Spain: general strike disrupts ports and factories — 19 Nov.
@@ -46,20 +46,38 @@ EUROPE
 ASIA & PACIFIC
 - Myanmar faces historic genocide verdict at UN court (ICJ, Rohingya) — 19 Nov.
 - Cyclone Akvan nears India coast (Machilipatnam–Puri) — 19 Nov.
-- Nvidia halts H200 chip shipments to China — 19 Nov (SimpleLife).
+- Taiwan drafts transnational repression crime law — SimpleLife, 19 Nov.
 
 MIDDLE EAST & AFRICA
 - Houthi rocket attack kills 53 soldiers in Yemen — 19 Nov.
 - Saudi Arabia says danger has passed in three southern cities after alerts — 19 Nov.
 
 SCIENCE & CULTURE
-- Voyager 1 reaches one light-day from Earth, 50 years after launch — 19 Nov.
+- Microsoft in talks to sell AI services to ByteDance — SimpleLife, 19 Nov.
 - Van Gogh painting sells for record $190.4m — BBC, 19 Nov.
 - Finland approves world's first nuclear waste repository — 19 Nov.
 
 Total: 4 heroes + 16 briefs = **20 stories, 5 regions + science/culture**.
-Numbers used on the image: $81.3bn, $83, €45bn, 53, $190.4m — each from a named
+Numbers used on the image: $81.3bn, $83, 53, $190.4m, $1.6B — each from a named
 source above. No other numbers are printed as fact.
+
+## CORRECTION v1.1 (19 Nov ~10:15 WIB — before any submit)
+First duel (top01a, judge z-ai/glm-5.3-flash) flagged two strip briefs as
+first-reported 18 Nov, not 19 Nov. Verification confirmed FOUR briefs were
+misdated — they appeared in 19 Nov morning roundups but the events were
+earlier, so they violated criterion 1 (one day) and were replaced:
+- EU €45bn Ukraine loan — presented by the Commission Wed 18 Nov (Reuters).
+- Voyager 1 one light-day — crossed Wed 18 Nov 10:16 UTC (NASA).
+- Fed minutes (Oct 27–28 meeting) — released Wed 18 Nov 2pm ET (Federal Reserve).
+- Nvidia H200 halt — announced on the Nov 17 earnings call (TechCrunch).
+- Canada–Carney China-ties comment — first-report date could not be verified
+  to 19 Nov, replaced as a precaution with the US $1.6B Ukraine aid approval.
+Replacements (all first reported 19 Nov, sources above): Zelensky accuses US
+of blocking missile deliveries; US senators warn AI cyber threats; US approves
+$1.6B Ukraine aid; Taiwan drafts transnational repression crime law; Microsoft
+in talks to sell AI services to ByteDance. The v1 duel results (top01a loss
+0.3, top01b win 0.7 = game 0.5 tie) are DISCARDED — they measured the
+defective image; the full duel was re-run on the corrected image.
 
 ## Deliberately NOT used as heroes (date check)
 - US–Iran exchange of fire (17–18 Nov) — too old for a hero.

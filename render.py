@@ -102,11 +102,11 @@ HEROES = [
 STRIP = [
     ("AMERICAS", [
         "Jeffries set to be first Black House Speaker",
-        "Fed minutes: most officials expect more rate hikes",
-        "Canada adjusts China ties, seeks right US deal",
+        "US senators warn AI cyber threats outpacing defences",
+        "US approves $1.6B aid package to Ukraine",
     ]),
     ("EUROPE", [
-        "EU proposes €45bn Ukraine loan",
+        "Zelensky accuses US of blocking missile deliveries",
         "Estonia to close Russia border from December",
         "Prague: mass protest for media independence",
         "Spain: general strike hits ports and factories",
@@ -115,14 +115,14 @@ STRIP = [
     ("ASIA & PACIFIC", [
         "Myanmar faces historic genocide verdict at UN court",
         "Cyclone Akvan nears India's coast",
-        "Nvidia halts H200 chip shipments to China",
+        "Taiwan drafts transnational repression crime law",
     ]),
     ("MIDDLE EAST", [
         "Houthi rocket kills 53 soldiers in Yemen",
         "Saudi Arabia says danger passed in southern cities",
     ]),
     ("SCIENCE & CULTURE", [
-        "Voyager 1 reaches one light-day from Earth",
+        "Microsoft in talks to sell AI services to ByteDance",
         "Van Gogh sells for record $190.4m",
         "Finland approves first nuclear waste repository",
     ]),
@@ -204,7 +204,7 @@ def draw_footer(d):
            "All stories happened or were first reported on 19 November 2026.",
            font=f_f, fill=MUTED, anchor="ma")
     d.text((W // 2, 1006),
-           "Sources: NYT · BBC · Al Jazeera · Sky News",
+           "Sources: NYT · BBC · Al Jazeera · Sky News · NDTV · JagranJosh · NewsBites · SimpleLife · Munich Eye · Germany Eye",
            font=f_f, fill=MUTED, anchor="ma")
 
 
