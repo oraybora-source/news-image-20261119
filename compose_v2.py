@@ -55,6 +55,38 @@
 # or number can show (Ukraine "APRIL 2024", SARB "04 NOV 2026" /
 # "RATE HIKE", COP31 "2024" are all outside the crop).
 #
+# v4 changes (20 Nov ~06:00, Kevin 05:48 WIB: "Two president belum pake
+# sketsa. Gambar 5-13 bisa di cek lagi. Gambarnya tuh ke potong teks nya.
+# Contohnya no 8, saya tuh pengennya keliatan gedung full ga kepotong."):
+# All 9 card pictures 5-13 were REDRAWN in wide 3:1 format with the
+# subject whole inside the frame, then NORMALISED onto a 1930x700 canvas
+# (exact 2.757:1 card-box aspect) so cover_crop shows them whole:
+# subject bbox fitted into an inner box (3% sides, 18% top to clear the
+# 10px strip, 3% bottom), padded with each picture's OWN corner colour.
+#  - 10 Uganda follows the sketch: big red car whole centre-right (main
+#    subject), two SMALL presidents shaking hands at far left, factory
+#    behind (was: two big suited men hiding the car).
+#  - 5 Ukraine: Capitol whole with sky margin, flag on short pole with
+#    tripod base fully visible, crates whole. 6 ICJ: palace whole with
+#    sky margin, spire tip clear of the strip, Myanmar flag + gavel +
+#    files whole. 7 Cyclone: spiral + temple town whole. 8 SARB: bank
+#    building whole with margins left AND right (Kevin's example); the
+#    red arrow shaft (cut at the top edge in the first draw) was
+#    shortened with a clean perpendicular cut in PIL — no 3rd draw.
+#    The second SARB draw was REJECTED (building = a long bar touching
+#    both edges, the exact defect Kevin flagged).
+#  - 9 Berlin: gate whole incl. quadriga + eagle with sky margin, table
+#    + 6 people + flags whole. 11 COP31: chart screen + red X + 3
+#    chimneys whole (bottom stage/audience band, cut at the source's
+#    bottom edge, cropped out before normalising). 12 Prague: twin-
+#    towered church whole with spires + sky margin. 13 Kyiv: launcher
+#    truck whole with side margins, STOP sign whole, flags whole.
+#  - In-picture text: only "VI" (GTA hero, unchanged) and "STOP"
+#    (Kyiv) remain, both whole; no half-cut letters at any edge.
+#  - All card focus values are now 0.5 (assets are exact box aspect,
+#    cover_crop is a pure scale). Titles, texts, numbers, layout,
+#    house style and the v2/v3 defect fixes are unchanged.
+#
 # Run:  python3 compose_v2.py   (needs Pillow; writes entry.png here)
 # The entrypoint main.py only copies entry.png — it never re-renders.
 
@@ -159,15 +191,15 @@ CARDS = [
     ("The Hague", "ICJ verdict in Myanmar case",
      "media-generation-card-icj-0-011a1eeb-2b66-41b8-a944-1d5ddf9a0fda.png",
      "Judgment read today", "Rohingya case at UN court",
-     "6 · THE HAGUE · GENOCIDE CASE", "EUROPE", 0.58),
+     "6 · THE HAGUE · GENOCIDE CASE", "EUROPE", 0.50),
     ("Puri", "Cyclone Akvan nears India coast",
      "media-generation-card-cyclone-0-d9f8d73c-ef93-4c67-b3e4-31660ea6557b.png",
      "Red alerts out; schools shut", "Machilipatnam to Puri",
-     "7 · PURI · CYCLONE AKVAN", "ASIA", 0.55),
+     "7 · PURI · CYCLONE AKVAN", "ASIA", 0.50),
     ("Johannesburg", "South Africa holds rates",
      "media-generation-card-sarb-0-1ae3bf5f-15dd-42cd-9cf8-09688ab8d5fa.png",
      "SARB holds repo at 7.25%", "Rand at lowest of the year",
-     "8 · JOHANNESBURG · RATES", "AFRICA", 0.52),
+     "8 · JOHANNESBURG · RATES", "AFRICA", 0.50),
     ("Berlin", "Coalition of the Willing in Berlin",
      "media-generation-card-berlin-0-bf1abbaa-3f07-4a81-bf3c-09cc2250243e.png",
      "Witkoff and Kushner attend", "Coalition meets in Berlin",
@@ -175,19 +207,19 @@ CARDS = [
     ("Mpigi", "Two presidents open car plant",
      "media-generation-card-uganda-v2-0-3a6cb6aa-71d0-4b1a-8a03-8950e79bddec.png",
      "Museveni and Samia at launch", "Double Q in Mpigi",
-     "10 · MPIGI · CAR PLANT", "AFRICA", 0.62),
+     "10 · MPIGI · CAR PLANT", "AFRICA", 0.50),
     ("Antalya", "COP31 draft drops fossil fuel",
      "media-generation-card-cop31-0-b3cba7ef-38d6-43dc-b5ed-902701778d89.png",
      "Draft drops fossil phase-out", "1.5°C may pass",
-     "11 · ANTALYA · COP31 DRAFT", "MIDEAST", 0.40),
+     "11 · ANTALYA · COP31 DRAFT", "MIDEAST", 0.50),
     ("Prague", "Prague protest for free media",
      "media-generation-card-prague-0-85b675a9-6723-4533-ac21-802291588bd5.png",
      "Crowds demand free press", "Huge march in Prague",
-     "12 · PRAGUE · MEDIA PROTEST", "EUROPE", 0.45),
+     "12 · PRAGUE · MEDIA PROTEST", "EUROPE", 0.50),
     ("Kyiv", "Zelensky: US blocks missiles",
      "media-generation-card-kyiv-0-bd53f931-1191-476d-9dd6-cafd2dc91fdd.png",
      "Kyiv accuses Washington", "Missile deliveries held back",
-     "13 · KYIV · MISSILE DELIVERIES", "EUROPE", 0.55),
+     "13 · KYIV · MISSILE DELIVERIES", "EUROPE", 0.50),
 ]
 
 # Briefs in reading order (numbers 14-31): city, region, text.

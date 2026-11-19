@@ -117,3 +117,16 @@ only) copies `entry.png` to the output directory; it runs twice in
 grading and writes identical bytes both times. Research cutoff:
 19 Nov 2026 evening WIB; Africa + COP31 stories verified from named
 sources the same evening.
+
+v4 fix (20 Nov 2026, after Kevin reviewed the v3 image at display
+size): cards 5–13 were redrawn in wide 3:1 format and normalised
+onto a 1930×700 canvas (exact card-box aspect), so each picture's
+subject is WHOLE with a margin around it — no more subjects cut at
+the frame edges (the SARB bank building, the Kyiv missile launcher
+and the Prague church tower were all cut in v3). Card 10 follows
+the approved sketch: the big red car is the main subject, whole,
+centre-right; the two presidents shake hands, small, at the far
+left; the factory stands behind. The SARB arrow was shortened in
+PIL with a clean cut instead of a third draw. All card focus values
+are 0.5 now (the assets match the box aspect, so no crop is taken).
+Titles, texts, numbers and layout are unchanged.
