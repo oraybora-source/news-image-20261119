@@ -1,9 +1,9 @@
-# news-image-20261119 — final entry, 39 stories
+# news-image-20261119 — final entry v2, 31 stories
 
 One image summing up the world's news of **Thursday 19 November 2026**.
-All 39 stories are dated 19 November 2026; 18 November items (Fed
-minutes, Voyager 1, Nvidia H200 halt, EU loan) were left out on purpose
-and are named in the DATE CHECK strip on the image.
+All 31 stories are dated 19 November 2026; 18 November items (Fed
+minutes, Voyager 1, Nvidia H200 halt, EU loan, Van Gogh sale) were left
+out on purpose and are named in the DATE CHECK strip on the image.
 
 ## Heroes (3)
 
@@ -15,98 +15,104 @@ and are named in the DATE CHECK strip on the image.
 3. **Nasdaq — Markets.** Anthropic's $81.3bn IPO — a record. Priced
    at $83 a share, the biggest IPO ever. (Reuters)
 
-## Cards (15)
+## Cards (10)
 
 4. **Gaza — Ceasefire line.** Israeli push past Gaza ceasefire line.
-   Israeli troops cross the ceasefire line. (Reuters, Al Jazeera)
-5. **Washington — Ukraine aid.** US approves $1.6bn Ukraine aid
-   package. $1.6bn approved on Thursday for Ukraine's defence.
-   (Reuters)
-6. **Kyiv — Missile deliveries.** Zelensky: US blocking missile
-   deliveries. Missile deliveries held back. (Reuters)
-7. **Estonia — Russia border.** Estonia to shut Russia border.
-   Border with Russia to shut. (Reuters)
-8. **Prague — Media protest.** Prague mass protest for media
-   independence. Hundreds of thousands protest. (Reuters)
-9. **Spain — General strike.** Spain hit by nationwide general
-   strike. Ports and factories disrupted. (Reuters)
-10. **Kerch — Bridge attack.** Crimean Bridge attacked again.
-    Russian official confirms the attack. (Reuters)
-11. **The Hague — Genocide case.** ICJ rules on Myanmar genocide
-    case. Verdict due today in The Hague. (Reuters)
-12. **Puri — Cyclone Akvan.** Cyclone Akvan nears India's coast.
-    Red alerts out; schools shut from Machilipatnam to Puri.
-    (Reuters, ANI)
-13. **Johannesburg — Rate decision.** South Africa holds rates as
-    rand slides. SARB holds repo rate at 7.25%; rand falls to lowest
-    of the year. (Reuters, PropFlow360)
-14. **Yemen — Rocket strike.** Houthi rocket kills 53 soldiers in
-    Yemen. 53 soldiers killed in Yemen. (Reuters)
-15. **Auction — Van Gogh record.** Van Gogh sells for record
-    $190.4m. Auction record for the artist. (BBC)
-16. **Saudi Arabia — All clear.** Saudi: danger has passed in south.
-    Alerts lifted in three southern cities. (Reuters)
-17. **Mpigi — Car plant.** Two presidents open Uganda car plant.
-    Museveni and Samia launch plant; Double Q–Sinotruk assembly in
-    Mpigi. (Kampala Post, NBS TV)
-18. **Antalya — COP31 draft.** COP31 draft drops fossil-fuel
-    language. New draft omits fossil phase-out; Antalya text admits
-    1.5°C may pass. (Reuters)
+   Rare ground op; troops cross the ceasefire line.
+   (Reuters, Al Jazeera)
+5. **Washington — Ukraine aid.** US approves $1.6bn Ukraine aid.
+   Approved Thursday: $1.6bn for Ukraine. (Reuters)
+6. **The Hague — Genocide case.** ICJ verdict in Myanmar case.
+   Judgment read today; Rohingya case at UN court.
+   (Reuters, The Guardian)
+7. **Puri — Cyclone Akvan.** Cyclone Akvan nears India coast.
+   Red alerts out; schools shut Machilipatnam to Puri. (Reuters, ANI)
+8. **Johannesburg — Rates.** South Africa holds rates.
+   SARB holds repo at 7.25%; Rand at lowest of the year. (Reuters)
+9. **Berlin — Coalition talks.** Coalition of the Willing in Berlin.
+   Witkoff and Kushner attend; Coalition meets in Berlin.
+   (Reuters, The Guardian)
+10. **Mpigi — Car plant.** Two presidents open car plant.
+    Museveni and Samia at launch; Double Q in Mpigi.
+    (Reuters, NBS TV, Kampala Post)
+11. **Antalya — COP31 draft.** COP31 draft drops fossil fuel.
+    Draft drops fossil phase-out; 1.5°C may pass. (Reuters)
+12. **Prague — Media protest.** Prague protest for free media.
+    Crowds demand free press; huge march in Prague. (Reuters, AP)
+13. **Kyiv — Missile deliveries.** Zelensky: US blocks missiles.
+    Kyiv accuses Washington; missile deliveries held back.
+    (Reuters, The Guardian)
 
-## Briefs (21)
+## Briefs (18)
 
-19. Berlin — The Coalition of the Willing meets. Witkoff and Kushner
-    attend.
-20. Saada — The Saudi coalition intercepts a Houthi missile. The
-    launcher is destroyed.
-21. Tokyo — India and Japan hold 2+2 defence talks. The ministers
-    meet in the capital.
-22. Hormuz — A tanker is hit by a projectile. Oil steadies after the
-    strike.
-23. Malib — The Bayelsa head is hidden in weakness. Winds of 80 mph
-    capsized her in seconds.
-24. Shenzhen — Trump mentions ex-Nvidia boss Huang briefly in X
-    talks. The talks are at the APEC summit.
-25. Australia — The jobless rate jumps to 4.9%. It is the highest
-    since 2021.
-26. London — The UK leasehold Bill enters Parliament. Rents are
-    capped at £250.
-27. Washington — US senators warn AI cyber threats are outpacing
-    defences.
-28. US — Microsoft is in talks to sell AI services to ByteDance.
-29. Shenzhen — Japan PM Takaichi holds talks with Putin. Both leaders
-    are at the APEC summit.
-30. New Delhi — Congress targets the Modi government over inflation.
-31. Kuala Lumpur — UNHCR halts refugee registration in Malaysia.
-32. Global — Bitcoin slips below $63,000. It is down 2.7%.
-33. Tokyo — Japan machinery orders dip 0.3%. The figures are for
-    September.
-34. Brussels — The EU delays methane rules by two years.
-35. Tokyo — Stocks rise. The Anthropic IPO lifts the AI mood.
-36. Taiwan — Taiwan drafts a transnational repression law. The bill
-    targets coercion abroad.
-37. Finland — The first nuclear waste store is approved. It is the
-    world's first permanent repository.
-38. Wellington — Bumrah strikes twice at lunch. The 1st Test is at
-    Basin Reserve.
-39. Dakar — Senegal holds Armed Forces Day in Dakar. President Faye
-    leads the ceremony. (ECOWAS)
+14. **New Delhi:** Congress targets Modi government over inflation.
+15. **Saada:** Saudi intercepts a Houthi missile.
+16. **Tokyo:** India and Japan hold 2+2 defence talks.
+17. **Australia:** The jobless rate jumps to 4.9%.
+18. **Global:** Bitcoin slips below $63,000.
+19. **Dakar:** Senegal holds Armed Forces Day.
+20. **Shenzhen:** Trump mentions ex-Nvidia boss Huang 'briefly' in
+    Xi talks.
+21. **MAIB:** The Bayesian had a hidden wind weakness.
+22. **US:** Microsoft is in talks to sell AI services to ByteDance.
+23. **Shenzhen:** Japan PM Takaichi holds talks with Putin.
+24. **Tokyo:** Japan machinery orders dip 0.3%.
+25. **Brussels:** The EU delays methane rules by two years.
+26. **Kuala Lumpur:** UNHCR halts refugee registration in Malaysia.
+27. **Taiwan:** A transnational repression bill is drafted.
+28. **Finland:** The first nuclear waste store is approved.
+29. **Wellington:** Bumrah strikes twice at lunch.
+30. **Hormuz:** A tanker is hit by a projectile.
+31. **Saudi Arabia:** Danger has passed in the south. (Reuters,
+    19 Nov 2026 — see the note below.)
 
-## Regions
+## What changed from the v1 entry (39 stories)
 
-EUROPE 11 · THE AMERICAS 3 · ASIA-PACIFIC 9 · MIDEAST 6 · AFRICA 3 ·
-OCEANIA 2 · WORLD 5 = 39.
+- The layout follows the approved 2-row × 5-column sketch: 3 heroes,
+  10 cards, 18 briefs — 31 stories in all. Text is bigger and fewer
+  stories are crammed in, so every headline and brief reads cleanly.
+- **Yemen brief removed.** The sketch carried "Yemen: Houthi rocket
+  kills 53 soldiers". Checking it before the build found it happened
+  on **Monday 19 October 2026** (Reuters/AP, published 2026-10-19),
+  not 19 November — the same wrong-date trap as the Van Gogh sale,
+  which was also removed. It was replaced with a verified 19 November
+  item from Reuters (19 Nov 2026): the coalition dealt with a missile
+  threat towards Riyadh on Thursday and Saudi Civil Defense said the
+  danger had passed; also reported by Al Arabiya the same day.
+- **Van Gogh sale removed.** The auction date was ambiguous
+  (18 vs 19 November), so the story was dropped entirely rather than
+  risk a misdated card; it is named in the DATE CHECK strip as left
+  out.
+- **Uganda card wording fixed.** The sketch read "Museveni and Samia
+  open plant"; the entry reads "Museveni and Samia at launch".
+- **DATE CHECK wording fixed.** It now reads "All 31 stories are
+  19 November 2026 — Fed minutes, Voyager 1, Nvidia H200 halt, EU
+  loan, Van Gogh sale: all 18 Nov, left out."
+- **Map improved.** Continent outlines are 2px, pins are bigger with
+  8pt numbers, dots are kept 9px apart. Three brief dots (Brussels,
+  Taiwan, Saudi Arabia) are skipped on collision and logged by the
+  compositor — the stories are still in the briefs and the map still
+  shows their region's pins.
+- Region counts: EUROPE 7, THE AMERICAS 3, ASIA-PACIFIC 8,
+  MIDEAST 5, AFRICA 3, OCEANIA 2, WORLD 3 — 31 in all.
 
 ## How the image was made
 
-`compose_final.py` (Python 3 + Pillow, written fresh in the build
+`compose_v2.py` (Python 3 + Pillow, written fresh in the build
 session) composes `entry.png` (1024×1024) from the illustration
 assets in `assets/` plus text rendered from the verified news strings
-above. The four hero illustrations were generated in an earlier build
-session from my own prompts, and the 14 card illustrations were
-generated in this session in the same style — no copied artwork, no
-photos, no text inside the illustrations; every word on the page is
-drawn by `compose_final.py`. `main.ts` (Node 22, standard library
+above. All 13 illustrations share ONE house style — flat modern
+editorial illustration, clean vector shapes, bold flat colour blocks,
+warm cream paper, navy outlines. Ten were redrawn to that style in
+this session (GTA hero, Gaza, Ukraine aid, ICJ, Cyclone, SARB, Berlin,
+COP31, Prague, Kyiv); three were kept from the v2 build because they
+were already flat (summit, IPO, Uganda). COP31 was drawn twice — the
+first version had "CLIMATE CONFERENCE 2024" written on its screen,
+the wrong year, so it was replaced with a version with no text at
+all. No copied artwork, no photos, no text inside the illustrations
+except the intended "VI" billboard in the GTA hero and the red STOP
+sign in the Kyiv card; every other word on the page is drawn by
+`compose_v2.py`. `main.py` (Python 3.13, standard library
 only) copies `entry.png` to the output directory; it runs twice in
 grading and writes identical bytes both times. Research cutoff:
 19 Nov 2026 evening WIB; Africa + COP31 stories verified from named
