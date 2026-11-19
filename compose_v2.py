@@ -114,6 +114,17 @@
 #    subjects stay whole with margins; no new in-picture text.
 #  - Titles, texts, numbers, layout, house style unchanged.
 #
+# v7 changes (20 Nov ~06:41 WIB, Kevin: "Maksudku ga perlu di full
+# vertical"): the map does NOT have to fill the whole box height.
+# It is now a NATURAL-ASPECT STRIP: full world width (no left/right
+# crop — Americas, Europe, Africa, Asia, Australia all in), no
+# stretch, no ocean gap inside the map; height follows the true
+# ratio (260 px wide -> 130 px tall). The map box follows the map
+# height; the space left in the left column holds a compact 3-line
+# legend (numbered pin / gold star / small dot), centred. Pin/dot
+# offsets retuned for the smaller scale so all 11 dots return
+# (Tokyo, Australia, Wellington were lost in the v6 cover-fit crop).
+#
 # Run:  python3 compose_v2.py   (needs Pillow; writes entry.png here)
 # The entrypoint main.py only copies entry.png — it never re-renders.
 
@@ -360,7 +371,9 @@ PLACES = {
     "Kuala Lumpur": (101.7, 3.1),
     "Beijing": (116.4, 39.9),
     "Brussels": (4.4, 50.8),
-    "Johannesburg": (-28.0, -26.2),
+    "Johannesburg": (28.0, -26.2),  # v7 fix: was (-28.0, -26.2) — wrong
+    # hemisphere; the pin sat in the South Atlantic instead of South
+    # Africa. Johannesburg is 28.0E, 26.2S.
     "Mpigi": (32.3, 0.2),
     "Antalya": (30.7, 36.9),
     "Dakar": (-17.4, 14.7),
@@ -385,13 +398,28 @@ PIN_OFFSETS = {
     "Puri": (0, 12),
     "New Delhi": (0, -14),
 }
-# Dot offsets (same leader-line mechanism as pins). v5: the Hormuz
-# dot sat on top of the "Gaza" label, so it moves down-right.
+# Dot offsets (same leader-line mechanism as pins). v7 (natural-aspect
+# strip, smaller scale): Saada moved right so it clears the Mpigi pin,
+# Taiwan moved down so it clears the Tokyo dot, Brussels moved up-left
+# so it clears the Kyiv pin. v5: the Hormuz dot sat on top of the
+# "Gaza" label, so it moves down-right.
 DOT_OFFSETS = {
     "Hormuz": (8, 11),
+    "Saada": (10, 14),
+    "Taiwan": (0, 14),
+    "Brussels": (-8, -8),
 }
 # Which pins get a name label, and on which side (l/r/a/b).
-PIN_LABELS = {"Gaza": "r", "Wellington": "l", "Tokyo": "a", "Shenzhen": "l"}  # v6: star near right edge, label below would run off-box
+# v7: "Gaza" dropped — at this scale its label collides with the
+# Shenzhen label AND the Saada dot/leader no matter the side
+# (checked all four); pin 4 is still identified by card 4's strip
+# and the legend. "Wellington"/"Tokyo" are dots, so their entries
+# here are inert.
+PIN_LABELS = {"Wellington": "l", "Tokyo": "a", "Shenzhen": "l"}  # v6: star near right edge, label below would run off-box
+# Extra vertical nudge (px) for a label, on top of its side offset.
+# v7: Shenzhen -7 so the text clears the New Delhi pin above and the
+# Saudi Arabia dot below (both sub-1px clearances, verified visually).
+PIN_LABEL_DY = {"Shenzhen": -7}
 
 # Strip colour choices per region (first pick is the region colour;
 # the rest are nearby shades so neighbours can always differ).
@@ -512,28 +540,24 @@ def assign_strips(grid):
     return colours
 
 # ---- map ----
-# Map cover-fit (v6, Kevin 20 Nov 06:31 WIB: "lebih baik di crop aja,
-# jangan di buat laut gitu"). One undistorted scale, big enough that the
-# world (lon -180..180, lat 90..-90) covers the whole 260x218 box, so
-# the overflowing edges are CROPPED, not left as ocean gaps. The scale
-# is set by the pins: Washington (-77) .. Shenzhen (114.1) must all stay
-# visible, so s = 1.22 (visible lon -86..123); centre lon 18.55, centre
-# lat 13.15 (pins Berlin 52.5 .. Johannesburg -26.2). The thin sea bands
-# top/bottom are the Arctic + Southern Ocean of the map itself, not an
-# empty margin: land spans ~76% of the box height. A strict cover-fit
-# (s = 218/130 = 1.68) would show only 155 deg of longitude and cut the
-# Washington / Shenzhen pins, so the zoom is eased just enough to keep
-# every pin (task instruction: "sesuaikan zoom ... supaya semua pin
-# tetap terlihat").
-MAP_S = 1.22
-MAP_CLON = 18.55
-MAP_CLAT = 13.15
+# Map NATURAL-ASPECT STRIP (v7, Kevin 20 Nov 06:41 WIB: "Maksudku ga
+# perlu di full vertikal"). The map does NOT have to fill the whole
+# box height: full world width (lon -180..180, no left/right crop),
+# one undistorted scale, height follows the true ratio — 260 px wide
+# -> 130 px tall (2:1). Centre lon 10 so Wellington (174.8) still
+# fits inside the right edge with its pin; centre lat 0. The map box
+# follows the map height (see build()); the leftover space in the
+# left column holds a compact legend, not ocean.
+MAP_S = 260 / 360.0
+MAP_CLON = 10.0
+MAP_CLAT = 0.0
+MAP_H = 130
 
 
 def project(lon, lat, mw, mh):
-    """Equirectangular, UNDISTORTED, COVER-FIT (v6). One scale for both
-    axes; the world is centred on (MAP_CLON, MAP_CLAT) and cropped to
-    the box. lon -180..180 across, lat 90..-90 down."""
+    """Equirectangular, UNDISTORTED, NATURAL-ASPECT STRIP (v7). One
+    scale for both axes; the whole world (lon -180..180, lat 90..-90)
+    spans the box width, height follows the true 2:1 ratio."""
     x = mw / 2.0 + (lon - MAP_CLON) * MAP_S
     y = mh / 2.0 + (MAP_CLAT - lat) * MAP_S
     return (x, y)
@@ -577,11 +601,13 @@ def build_markers():
 
 
 def draw_map(mw, mh):
-    """The world map at its TRUE aspect ratio, COVER-FIT (v6: never
-    stretched — Kevin 20 Nov 06:07 WIB; never ocean gaps — Kevin 20 Nov
-    06:31 WIB). One scale for both axes, the world cropped to the box.
-    Pins r 6 with 8pt numbers, dots r 3 kept 9px apart; dots whose
-    centre falls outside the box are skipped (logged, same as collisions).
+    """The world map at its TRUE aspect ratio, NATURAL-ASPECT STRIP
+    (v7: never stretched — Kevin 20 Nov 06:07 WIB; never ocean gaps
+    — Kevin 20 Nov 06:31 WIB; never full-vertical — Kevin 20 Nov
+    06:41 WIB). One scale for both axes; the whole world spans the
+    box width, height follows the true 2:1 ratio. Pins r 6 with 8pt
+    numbers, dots r 3 kept 9px apart; dots whose centre falls outside
+    the box are skipped (logged, same as collisions).
     Returns (image, log)."""
     pins, dots = build_markers()
     im = Image.new("RGB", (mw, mh), SEA)
@@ -612,15 +638,16 @@ def draw_map(mw, mh):
             placed.append((qx, qy, 6))
         if city in PIN_LABELS:
             side = PIN_LABELS[city]
+            dy = PIN_LABEL_DY.get(city, 0)
             tw = d.textlength(city, font=f_label)
             if side == "r":
-                tx, ty = qx + 8, qy - 5
+                tx, ty = qx + 8, qy - 5 + dy
             elif side == "l":
-                tx, ty = qx - 8 - tw, qy - 5
+                tx, ty = qx - 8 - tw, qy - 5 + dy
             elif side == "a":
-                tx, ty = qx - tw / 2, qy - 16
+                tx, ty = qx - tw / 2, qy - 16 + dy
             else:
-                tx, ty = qx - tw / 2, qy + 9
+                tx, ty = qx - tw / 2, qy + 9 + dy
             d.text((tx, ty), city, font=f_label, fill=NAVY,
                    stroke_width=2, stroke_fill=PAPER)
     for i, (x1, y1, _r1) in enumerate(placed):
@@ -649,6 +676,35 @@ def draw_map(mw, mh):
     log = {"pins": [m for _c, m, _r in pins],
            "dots": placed_dots, "skipped_dots": skipped}
     return im, log
+
+
+def draw_map_legend(d, x, y_top, w, y_bottom):
+    """Compact 3-line legend under the map strip (v7), centred in the
+    leftover space of the left column. Explains the three marker
+    kinds; plain on the paper background, no box."""
+    f_txt = load(SANS, 11)
+    f_num = load(SANS_B, 8)
+    rows = [
+        ("pin", "Pin bernomor: nomor cerita"),
+        ("star", "Bintang emas: KTT Shenzhen"),
+        ("dot", "Titik kecil: brief lainnya"),
+    ]
+    lh = 18
+    y = y_top + (y_bottom - y_top - len(rows) * lh) // 2
+    for kind, text in rows:
+        cy = y + lh // 2
+        if kind == "pin":
+            d.ellipse([x + 2, cy - 6, x + 14, cy + 6],
+                      fill=(40, 90, 160), outline=WHITE, width=1)
+            tw = d.textlength("4", font=f_num)
+            d.text((x + 8 - tw / 2, cy - 4), "4", font=f_num, fill=WHITE)
+        elif kind == "star":
+            d.polygon(star_points(x + 8, cy, 7, 3), fill=GOLD, outline=NAVY)
+        else:
+            d.ellipse([x + 5, cy - 3, x + 11, cy + 3],
+                      fill=(40, 130, 70), outline=WHITE, width=1)
+        d.text((x + 20, y + 2), text, font=f_txt, fill=INK)
+        y += lh
 
 
 # ---- page sections ----
@@ -915,11 +971,11 @@ def build():
     bottom_y = y
     bottom_h = 964 - bottom_y
     map_top = bottom_y + 24
-    map_h = bottom_h - 24
-    map_im, mlog = draw_map(MAP_W, map_h)
+    map_im, mlog = draw_map(MAP_W, MAP_H)
     canvas.paste(map_im, (12, map_top))
-    d.rectangle([12, map_top, 12 + MAP_W, bottom_y + bottom_h],
+    d.rectangle([12, map_top, 12 + MAP_W, map_top + MAP_H],
                 outline=CARD_LINE, width=1)
+    draw_map_legend(d, 12, map_top + MAP_H, MAP_W, bottom_y + bottom_h)
     bx = 12 + MAP_W + 10
     bw = 1012 - bx
     used = draw_briefs(d, bx, bottom_y, bw, bottom_h)

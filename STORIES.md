@@ -173,3 +173,25 @@ keep them all. Three far-east dots (Tokyo, Australia, Wellington) fall
 outside the cropped window and are skipped; the rest stay in their
 true geographic places. Titles, texts, numbers and layout are
 unchanged.
+
+v7 (20 Nov 06:41 WIB, Kevin: "Maksudku ga perlu di full vertikal"):
+the map does NOT have to fill the whole box height. It is now a
+natural-aspect strip: the whole world width is visible (no
+left/right crop — the Americas, Europe, Africa, Asia and Australia
+all in), no stretch, no ocean gap inside the map; height follows the
+true ratio (260 px wide -> 130 px tall). The map box follows the map
+height, and the space left in the left column holds a compact 3-line
+legend (numbered pin = story number; gold star = Shenzhen summit;
+small dot = other briefs), centred. All pins (4–13, the Shenzhen
+star, 14) and all 11 dots are back, including Tokyo, Australia and
+Wellington, which the v6 crop had lost; nothing is skipped. The
+"Gaza" label was dropped — at this scale it collides with the
+Shenzhen label and the Saada dot/leader on every side; pin 4 is
+still identified by card 4's strip and the legend. The "Shenzhen"
+label is kept, nudged 7 px up so it clears the New Delhi pin above
+and the Saudi Arabia dot below. Data fix found during visual
+verification: Johannesburg's longitude in PLACES was -28.0 (west) —
+wrong hemisphere; pin 8 sat in the South Atlantic. Johannesburg is
+28.0° East, 26.2° South; fixed to (28.0, -26.2), and the pin now
+falls on land in South Africa. Titles, texts, numbers and layout are
+unchanged.
