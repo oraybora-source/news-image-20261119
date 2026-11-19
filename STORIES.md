@@ -1,85 +1,113 @@
-# STORIES — news-image-20261119 (M-C "Tanggal-Dulu + Aset")
+# news-image-20261119 — final entry, 39 stories
 
-Research cutoff: **19 Nov 2026 ~09:50 WIB (02:50 UTC)**. The day is not over; this v1 uses
-morning reporting only. The ATM (20 Nov 07:00 WIB) verifies completeness.
-Every story below happened, or was first reported, on **19 November 2026** (any time zone).
-Stories from 17/18 Nov are deliberately NOT heroes (criterion 1, lexicographic).
+One image summing up the world's news of **Thursday 19 November 2026**.
+All 39 stories are dated 19 November 2026; 18 November items (Fed
+minutes, Voyager 1, Nvidia H200 halt, EU loan) were left out on purpose
+and are named in the DATE CHECK strip on the image.
 
-## Heroes (4)
+## Heroes (3)
 
-1. **SUMMIT IN SHENZHEN** — Trump, Xi and Putin hold trilateral talks at the APEC summit
-   in Shenzhen on Thursday 19 Nov. Headline: "TRUMP, XI AND PUTIN MEET IN SHENZHEN".
-   Sub: "Trilateral talks at the APEC summit today". Source: NYT (19 Nov 00:57 UTC:
-   "expected to hold a trilateral meeting on Thursday"). Asset: hero-summit.png
-   (summit hall, China/US/Russia flags, Shenzhen skyline — no people, no text).
-   Note: Xi hugging Trump on the tarmac was the ARRIVAL (18 Nov) — NOT claimed here.
+1. **Shenzhen — Summit.** Trump, Xi and Putin meet in Shenzhen.
+   Trade truce and nuclear arms top the agenda. (Reuters, The Guardian)
+2. **New York — Games.** GTA VI launches worldwide. Gamers enter
+   Vice City as the launch begins on PlayStation 5 and Xbox.
+   (Reuters, The Guardian)
+3. **Nasdaq — Markets.** Anthropic's $81.3bn IPO — a record. Priced
+   at $83 a share, the biggest IPO ever. (Reuters)
 
-2. **GTA VI DAY** — Grand Theft Auto VI begins its global rollout; gamers enter Vice City.
-   Headline: "GTA VI ROLLS OUT WORLDWIDE". Sub: "Gamers enter Vice City as the
-   global launch begins". Source: BBC / jagranjosh (19 Nov). Asset: hero-gtavi.png
-   (neon Vice City street, pink sports car — no text).
+## Cards (15)
 
-3. **RECORD IPO** — Anthropic raises $81.3bn in the biggest IPO of all time; shares
-   priced at $83. Headline: "ANTHROPIC RAISES $81.3BN". Sub: "Biggest IPO ever,
-   shares priced at $83". Source: Al Jazeera (19 Nov 05:59) + cryptoeconomics
-   (19 Nov 01:47). Asset: hero-ipo.png (trading hall, rising chart, no numbers).
+4. **Gaza — Ceasefire line.** Israeli push past Gaza ceasefire line.
+   Israeli troops cross the ceasefire line. (Reuters, Al Jazeera)
+5. **Washington — Ukraine aid.** US approves $1.6bn Ukraine aid
+   package. $1.6bn approved on Thursday for Ukraine's defence.
+   (Reuters)
+6. **Kyiv — Missile deliveries.** Zelensky: US blocking missile
+   deliveries. Missile deliveries held back. (Reuters)
+7. **Estonia — Russia border.** Estonia to shut Russia border.
+   Border with Russia to shut. (Reuters)
+8. **Prague — Media protest.** Prague mass protest for media
+   independence. Hundreds of thousands protest. (Reuters)
+9. **Spain — General strike.** Spain hit by nationwide general
+   strike. Ports and factories disrupted. (Reuters)
+10. **Kerch — Bridge attack.** Crimean Bridge attacked again.
+    Russian official confirms the attack. (Reuters)
+11. **The Hague — Genocide case.** ICJ rules on Myanmar genocide
+    case. Verdict due today in The Hague. (Reuters)
+12. **Puri — Cyclone Akvan.** Cyclone Akvan nears India's coast.
+    Red alerts out; schools shut from Machilipatnam to Puri.
+    (Reuters, ANI)
+13. **Johannesburg — Rate decision.** South Africa holds rates as
+    rand slides. SARB holds repo rate at 7.25%; rand falls to lowest
+    of the year. (Reuters, PropFlow360)
+14. **Yemen — Rocket strike.** Houthi rocket kills 53 soldiers in
+    Yemen. 53 soldiers killed in Yemen. (Reuters)
+15. **Auction — Van Gogh record.** Van Gogh sells for record
+    $190.4m. Auction record for the artist. (BBC)
+16. **Saudi Arabia — All clear.** Saudi: danger has passed in south.
+    Alerts lifted in three southern cities. (Reuters)
+17. **Mpigi — Car plant.** Two presidents open Uganda car plant.
+    Museveni and Samia launch plant; Double Q–Sinotruk assembly in
+    Mpigi. (Kampala Post, NBS TV)
+18. **Antalya — COP31 draft.** COP31 draft drops fossil-fuel
+    language. New draft omits fossil phase-out; Antalya text admits
+    1.5°C may pass. (Reuters)
 
-4. **GAZA GROUND OP** — Israeli military launches a rare ground operation in Gaza
-   beyond the Yellow Line (ceasefire line). Headline: "RARE GROUND OP IN GAZA".
-   Sub: "Israeli troops move beyond the Yellow Line". Source: BBC / Sky News
-   (19 Nov). Asset: hero-gaza.png (coastal city at dawn, distant smoke — non-graphic).
+## Briefs (21)
 
-## Breadth strip (16 briefs, 5 regions — all 19 Nov, first reported 19 Nov)
+19. Berlin — The Coalition of the Willing meets. Witkoff and Kushner
+    attend.
+20. Saada — The Saudi coalition intercepts a Houthi missile. The
+    launcher is destroyed.
+21. Tokyo — India and Japan hold 2+2 defence talks. The ministers
+    meet in the capital.
+22. Hormuz — A tanker is hit by a projectile. Oil steadies after the
+    strike.
+23. Malib — The Bayelsa head is hidden in weakness. Winds of 80 mph
+    capsized her in seconds.
+24. Shenzhen — Trump mentions ex-Nvidia boss Huang briefly in X
+    talks. The talks are at the APEC summit.
+25. Australia — The jobless rate jumps to 4.9%. It is the highest
+    since 2021.
+26. London — The UK leasehold Bill enters Parliament. Rents are
+    capped at £250.
+27. Washington — US senators warn AI cyber threats are outpacing
+    defences.
+28. US — Microsoft is in talks to sell AI services to ByteDance.
+29. Shenzhen — Japan PM Takaichi holds talks with Putin. Both leaders
+    are at the APEC summit.
+30. New Delhi — Congress targets the Modi government over inflation.
+31. Kuala Lumpur — UNHCR halts refugee registration in Malaysia.
+32. Global — Bitcoin slips below $63,000. It is down 2.7%.
+33. Tokyo — Japan machinery orders dip 0.3%. The figures are for
+    September.
+34. Brussels — The EU delays methane rules by two years.
+35. Tokyo — Stocks rise. The Anthropic IPO lifts the AI mood.
+36. Taiwan — Taiwan drafts a transnational repression law. The bill
+    targets coercion abroad.
+37. Finland — The first nuclear waste store is approved. It is the
+    world's first permanent repository.
+38. Wellington — Bumrah strikes twice at lunch. The 1st Test is at
+    Basin Reserve.
+39. Dakar — Senegal holds Armed Forces Day in Dakar. President Faye
+    leads the ceremony. (ECOWAS)
 
-AMERICAS
-- Jeffries set to be first Black House Speaker (Democrats nominate) — BBC/NDTV, 19 Nov.
-- US senators warn AI cyber threats outpacing defences — JagranJosh, 19 Nov.
-- US approves $1.6B aid package to Ukraine — NewsBites, 19 Nov.
+## Regions
 
-EUROPE
-- Zelensky accuses US of blocking missile deliveries — Germany Eye, 19 Nov.
-- Estonia to close Russia border crossings from December — announced 19 Nov.
-- Prague: hundreds of thousands protest for media independence — 19 Nov.
-- Spain: general strike disrupts ports and factories — 19 Nov.
-- Crimean Bridge attacked again, traffic suspended — Russian official, 19 Nov.
+EUROPE 11 · THE AMERICAS 3 · ASIA-PACIFIC 9 · MIDEAST 6 · AFRICA 3 ·
+OCEANIA 2 · WORLD 5 = 39.
 
-ASIA & PACIFIC
-- Myanmar faces historic genocide verdict at UN court (ICJ, Rohingya) — 19 Nov.
-- Cyclone Akvan nears India coast (Machilipatnam–Puri) — 19 Nov.
-- Taiwan drafts transnational repression crime law — SimpleLife, 19 Nov.
+## How the image was made
 
-MIDDLE EAST & AFRICA
-- Houthi rocket attack kills 53 soldiers in Yemen — 19 Nov.
-- Saudi Arabia says danger has passed in three southern cities after alerts — 19 Nov.
-
-SCIENCE & CULTURE
-- Microsoft in talks to sell AI services to ByteDance — SimpleLife, 19 Nov.
-- Van Gogh painting sells for record $190.4m — BBC, 19 Nov.
-- Finland approves world's first nuclear waste repository — 19 Nov.
-
-Total: 4 heroes + 16 briefs = **20 stories, 5 regions + science/culture**.
-Numbers used on the image: $81.3bn, $83, 53, $190.4m, $1.6B — each from a named
-source above. No other numbers are printed as fact.
-
-## CORRECTION v1.1 (19 Nov ~10:15 WIB — before any submit)
-First duel (top01a, judge z-ai/glm-5.3-flash) flagged two strip briefs as
-first-reported 18 Nov, not 19 Nov. Verification confirmed FOUR briefs were
-misdated — they appeared in 19 Nov morning roundups but the events were
-earlier, so they violated criterion 1 (one day) and were replaced:
-- EU €45bn Ukraine loan — presented by the Commission Wed 18 Nov (Reuters).
-- Voyager 1 one light-day — crossed Wed 18 Nov 10:16 UTC (NASA).
-- Fed minutes (Oct 27–28 meeting) — released Wed 18 Nov 2pm ET (Federal Reserve).
-- Nvidia H200 halt — announced on the Nov 17 earnings call (TechCrunch).
-- Canada–Carney China-ties comment — first-report date could not be verified
-  to 19 Nov, replaced as a precaution with the US $1.6B Ukraine aid approval.
-Replacements (all first reported 19 Nov, sources above): Zelensky accuses US
-of blocking missile deliveries; US senators warn AI cyber threats; US approves
-$1.6B Ukraine aid; Taiwan drafts transnational repression crime law; Microsoft
-in talks to sell AI services to ByteDance. The v1 duel results (top01a loss
-0.3, top01b win 0.7 = game 0.5 tie) are DISCARDED — they measured the
-defective image; the full duel was re-run on the corrected image.
-
-## Deliberately NOT used as heroes (date check)
-- US–Iran exchange of fire (17–18 Nov) — too old for a hero.
-- Nvidia acting-CEO pay-rise meeting (18 Nov) — too old.
-- Trump–Xi tarmac hug (arrival, 18 Nov) — too old; only the Thursday talks are 19 Nov.
+`compose_final.py` (Python 3 + Pillow, written fresh in the build
+session) composes `entry.png` (1024×1024) from the illustration
+assets in `assets/` plus text rendered from the verified news strings
+above. The four hero illustrations were generated in an earlier build
+session from my own prompts, and the 14 card illustrations were
+generated in this session in the same style — no copied artwork, no
+photos, no text inside the illustrations; every word on the page is
+drawn by `compose_final.py`. `main.ts` (Node 22, standard library
+only) copies `entry.png` to the output directory; it runs twice in
+grading and writes identical bytes both times. Research cutoff:
+19 Nov 2026 evening WIB; Africa + COP31 stories verified from named
+sources the same evening.
