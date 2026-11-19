@@ -148,3 +148,28 @@ only one lonely building were given living context: the SARB bank
 tree). The main subjects stay whole with margins, and no new text was
 added inside any picture. Titles, texts, numbers and layout are
 unchanged.
+
+v6 fix (20 Nov 2026, Kevin reviewed the v5 image at display size and
+corrected three things): (1) the living context added in v5 was too
+small to see — in cards 8 and 9 the people were only a few pixels, so
+at a glance they still read as "one building alone". Cards 6, 8 and 9
+were redrawn (a fourth draw for the SARB card, Kevin approved): the
+people are now big enough to read as people at display size, and the
+RIGHT side of each card — which was the empty side — is filled
+(judges and the Myanmar flag in card 6; walkers, the South African
+flag, a tree and the road in card 8; coalition leaders at a table and
+EU flags in card 9). The palace, the bank and the gate stay the
+biggest subjects, whole, with margins. (2) The GTA hero re-crop in v5
+made the "VI" whole but zoomed the whole scene out, so the car and
+the buildings shrank. The v4 framing is restored (same zoom, same
+focus 0.57) and the "VI" billboard itself was moved DOWN inside the
+poster by 105 px instead, so the "VI" is whole with sky above it and
+the scene stays big. (3) The map: Kevin said the contain-fit ocean
+gaps were worse than cropping, so the map is now cover-fit — one
+undistorted scale (1.22) that fills the whole box, with the overflowing
+left/right edges of the world cropped away. Every pin (4–13, the
+Shenzhen star, 14) stays visible; the scale was eased just enough to
+keep them all. Three far-east dots (Tokyo, Australia, Wellington) fall
+outside the cropped window and are skipped; the rest stay in their
+true geographic places. Titles, texts, numbers and layout are
+unchanged.

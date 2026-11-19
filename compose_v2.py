@@ -192,7 +192,7 @@ HEROES = [
         "deck": "Gamers enter Vice City as the launch begins on PlayStation 5 and Xbox",
         "strip": "2 · NEW YORK · GAMES",
         "region": "AMERICAS",
-        "focus": 0.5,
+        "focus": 0.57,
     },
     {
         "file": "media-generation-hero-ipo-v2-0-49b14d6a-813e-4e61-a965-6d53f5fc43fb.png",
@@ -391,7 +391,7 @@ DOT_OFFSETS = {
     "Hormuz": (8, 11),
 }
 # Which pins get a name label, and on which side (l/r/a/b).
-PIN_LABELS = {"Gaza": "r", "Wellington": "l", "Tokyo": "a", "Shenzhen": "b"}
+PIN_LABELS = {"Gaza": "r", "Wellington": "l", "Tokyo": "a", "Shenzhen": "l"}  # v6: star near right edge, label below would run off-box
 
 # Strip colour choices per region (first pick is the region colour;
 # the rest are nearby shades so neighbours can always differ).
@@ -512,18 +512,30 @@ def assign_strips(grid):
     return colours
 
 # ---- map ----
+# Map cover-fit (v6, Kevin 20 Nov 06:31 WIB: "lebih baik di crop aja,
+# jangan di buat laut gitu"). One undistorted scale, big enough that the
+# world (lon -180..180, lat 90..-90) covers the whole 260x218 box, so
+# the overflowing edges are CROPPED, not left as ocean gaps. The scale
+# is set by the pins: Washington (-77) .. Shenzhen (114.1) must all stay
+# visible, so s = 1.22 (visible lon -86..123); centre lon 18.55, centre
+# lat 13.15 (pins Berlin 52.5 .. Johannesburg -26.2). The thin sea bands
+# top/bottom are the Arctic + Southern Ocean of the map itself, not an
+# empty margin: land spans ~76% of the box height. A strict cover-fit
+# (s = 218/130 = 1.68) would show only 155 deg of longitude and cut the
+# Washington / Shenzhen pins, so the zoom is eased just enough to keep
+# every pin (task instruction: "sesuaikan zoom ... supaya semua pin
+# tetap terlihat").
+MAP_S = 1.22
+MAP_CLON = 18.55
+MAP_CLAT = 13.15
+
+
 def project(lon, lat, mw, mh):
-    """Equirectangular, UNDISTORTED (v5, Kevin 20 Nov 06:07 WIB: the
-    v4 map was vertically stretched ~2.5x because x and y used
-    different scales). One scale for both axes: s =
-    min((mw-16)/360, mh/130); the 360x130-degree world is centred in
-    the box and the rest stays SEA (a small ocean gap is fine).
-    lon -180..180 across, lat 75..-55 down."""
-    s = min((mw - 16) / 360.0, mh / 130.0)
-    ww, wh = 360.0 * s, 130.0 * s
-    ox, oy = (mw - ww) / 2.0, (mh - wh) / 2.0
-    x = ox + (lon + 180.0) / 360.0 * ww
-    y = oy + (75.0 - lat) / 130.0 * wh
+    """Equirectangular, UNDISTORTED, COVER-FIT (v6). One scale for both
+    axes; the world is centred on (MAP_CLON, MAP_CLAT) and cropped to
+    the box. lon -180..180 across, lat 90..-90 down."""
+    x = mw / 2.0 + (lon - MAP_CLON) * MAP_S
+    y = mh / 2.0 + (MAP_CLAT - lat) * MAP_S
     return (x, y)
 
 
@@ -565,10 +577,11 @@ def build_markers():
 
 
 def draw_map(mw, mh):
-    """The world map at its TRUE aspect ratio (v5: contain-fit, never
-    stretched — Kevin 20 Nov 06:07 WIB). One scale for both axes, the
-    world centred in its box, the rest stays SEA. Pins r 6 with 8pt
-    numbers, dots r 3 kept 9px apart.
+    """The world map at its TRUE aspect ratio, COVER-FIT (v6: never
+    stretched — Kevin 20 Nov 06:07 WIB; never ocean gaps — Kevin 20 Nov
+    06:31 WIB). One scale for both axes, the world cropped to the box.
+    Pins r 6 with 8pt numbers, dots r 3 kept 9px apart; dots whose
+    centre falls outside the box are skipped (logged, same as collisions).
     Returns (image, log)."""
     pins, dots = build_markers()
     im = Image.new("RGB", (mw, mh), SEA)
@@ -620,6 +633,9 @@ def draw_map(mw, mh):
         px, py = project(lon, lat, mw, mh)
         dx, dy = DOT_OFFSETS.get(city, (0, 0))
         qx, qy = px + dx, py + dy
+        if not (4 <= qx <= mw - 4 and 4 <= qy <= mh - 4):
+            skipped.append(city + " (out of view)")
+            continue
         if any(((qx - x) ** 2 + (qy - y) ** 2) ** 0.5 < 9
                for x, y, _r in placed):
             skipped.append(city)
