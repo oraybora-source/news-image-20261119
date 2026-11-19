@@ -87,6 +87,33 @@
 #    cover_crop is a pure scale). Titles, texts, numbers, layout,
 #    house style and the v2/v3 defect fixes are unchanged.
 #
+# v5 changes (20 Nov ~06:07-06:15 WIB, Kevin):
+#  - Map (Kevin 06:07: "petanya maksa vertical, sesuaikan saja, gpp
+#    ada gap kecil"): project() now uses ONE scale for both axes
+#    (contain-fit, true aspect ratio) — the world is no longer
+#    stretched to fill the box; ocean gaps top/bottom are fine.
+#    Pin/dot offsets reworked for the compressed cluster; the
+#    "Gaza" label moved so no pin paints over it.
+#  - 10 Uganda, 3rd draw (Kevin 06:12 "Boleh", overriding the
+#    2x/panel limit): presidents BIGGER, clearly shaking hands at
+#    far left; red car still BIG + WHOLE centre-right (main
+#    subject); factory behind — sketch composition kept.
+#  - Hero 2 GTA (Kevin 06:14: billboard "VI" still cut at the top):
+#    the source poster is re-cropped to exclude the "GTA VI LAUNCH
+#    DAY" headline + caption line entirely (the first re-crop cut
+#    through the headline and left half-cut red letters at the top
+#    edge); the scene now starts at clean sky, "VI" billboard whole
+#    with margin, pink car big + whole. Hero focus 0.5.
+#  - Enriched the bare panels (Kevin 06:15: "jangan terlalu hambar,
+#    jangan cuma 1 gedung doang"): 8 SARB, 3rd draw (street +
+#    people + tree + South African flag around the whole building;
+#    Kevin named card 8 as the example), 11 COP31, 3rd draw
+#    (audience + Turkish/EU flags + potted tree around the whole
+#    screen/chimneys/X), 5 Ukraine (edited in place: street +
+#    people + tree added, Capitol/flag/crates untouched). Main
+#    subjects stay whole with margins; no new in-picture text.
+#  - Titles, texts, numbers, layout, house style unchanged.
+#
 # Run:  python3 compose_v2.py   (needs Pillow; writes entry.png here)
 # The entrypoint main.py only copies entry.png — it never re-renders.
 
@@ -165,7 +192,7 @@ HEROES = [
         "deck": "Gamers enter Vice City as the launch begins on PlayStation 5 and Xbox",
         "strip": "2 · NEW YORK · GAMES",
         "region": "AMERICAS",
-        "focus": 0.57,
+        "focus": 0.5,
     },
     {
         "file": "media-generation-hero-ipo-v2-0-49b14d6a-813e-4e61-a965-6d53f5fc43fb.png",
@@ -341,6 +368,9 @@ PLACES = {
 
 # Hand-tuned pin offsets (dx, dy in px) so clustered pins do not
 # overlap; a thin leader line joins each offset pin to its true spot.
+# v5 (undistorted map compresses Europe/India vertically): Berlin up
+# so it clears Kyiv, Kyiv left so it clears Berlin and lets the
+# Finland dot stay, Puri down so it clears New Delhi.
 PIN_OFFSETS = {
     "Finland": (0, -12),
     "Prague": (0, 14),
@@ -350,9 +380,18 @@ PIN_OFFSETS = {
     "Hormuz": (0, -12),
     "Taiwan": (12, 0),
     "Antalya": (16, -12),
+    "Berlin": (0, -12),
+    "Kyiv": (-12, 0),
+    "Puri": (0, 12),
+    "New Delhi": (0, -14),
+}
+# Dot offsets (same leader-line mechanism as pins). v5: the Hormuz
+# dot sat on top of the "Gaza" label, so it moves down-right.
+DOT_OFFSETS = {
+    "Hormuz": (8, 11),
 }
 # Which pins get a name label, and on which side (l/r/a/b).
-PIN_LABELS = {"Gaza": "l", "Wellington": "l", "Tokyo": "a", "Shenzhen": "b"}
+PIN_LABELS = {"Gaza": "r", "Wellington": "l", "Tokyo": "a", "Shenzhen": "b"}
 
 # Strip colour choices per region (first pick is the region colour;
 # the rest are nearby shades so neighbours can always differ).
@@ -474,10 +513,17 @@ def assign_strips(grid):
 
 # ---- map ----
 def project(lon, lat, mw, mh):
-    """Equirectangular: lon -180..180 across (8px side padding),
-    lat 75..-55 down."""
-    x = 8 + (lon + 180.0) / 360.0 * (mw - 16)
-    y = (75.0 - lat) / 130.0 * mh
+    """Equirectangular, UNDISTORTED (v5, Kevin 20 Nov 06:07 WIB: the
+    v4 map was vertically stretched ~2.5x because x and y used
+    different scales). One scale for both axes: s =
+    min((mw-16)/360, mh/130); the 360x130-degree world is centred in
+    the box and the rest stays SEA (a small ocean gap is fine).
+    lon -180..180 across, lat 75..-55 down."""
+    s = min((mw - 16) / 360.0, mh / 130.0)
+    ww, wh = 360.0 * s, 130.0 * s
+    ox, oy = (mw - ww) / 2.0, (mh - wh) / 2.0
+    x = ox + (lon + 180.0) / 360.0 * ww
+    y = oy + (75.0 - lat) / 130.0 * wh
     return (x, y)
 
 
@@ -519,9 +565,10 @@ def build_markers():
 
 
 def draw_map(mw, mh):
-    """The world map filling its box edge to edge. v2: continent
-    outlines 2px (the sketch's 1px outlines blurred together at this
-    size), pins r 6 with 8pt numbers, dots r 3 kept 9px apart.
+    """The world map at its TRUE aspect ratio (v5: contain-fit, never
+    stretched — Kevin 20 Nov 06:07 WIB). One scale for both axes, the
+    world centred in its box, the rest stays SEA. Pins r 6 with 8pt
+    numbers, dots r 3 kept 9px apart.
     Returns (image, log)."""
     pins, dots = build_markers()
     im = Image.new("RGB", (mw, mh), SEA)
@@ -571,13 +618,17 @@ def draw_map(mw, mh):
     for city, region in dots:
         lon, lat = PLACES[city]
         px, py = project(lon, lat, mw, mh)
-        if any(((px - x) ** 2 + (py - y) ** 2) ** 0.5 < 9
+        dx, dy = DOT_OFFSETS.get(city, (0, 0))
+        qx, qy = px + dx, py + dy
+        if any(((qx - x) ** 2 + (qy - y) ** 2) ** 0.5 < 9
                for x, y, _r in placed):
             skipped.append(city)
             continue
-        d.ellipse([px - 3, py - 3, px + 3, py + 3],
+        if (dx, dy) != (0, 0):
+            d.line([(px, py), (qx, qy)], fill=NAVY, width=1)
+        d.ellipse([qx - 3, qy - 3, qx + 3, qy + 3],
                   fill=REGION_COLORS[region], outline=WHITE, width=1)
-        placed.append((px, py, 3))
+        placed.append((qx, qy, 3))
         placed_dots.append(city)
     log = {"pins": [m for _c, m, _r in pins],
            "dots": placed_dots, "skipped_dots": skipped}

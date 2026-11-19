@@ -130,3 +130,21 @@ left; the factory stands behind. The SARB arrow was shortened in
 PIL with a clean cut instead of a third draw. All card focus values
 are 0.5 now (the assets match the box aspect, so no crop is taken).
 Titles, texts, numbers and layout are unchanged.
+
+v5 fix (20 Nov 2026, Kevin reviewed the v4 image at display size):
+the map was drawn with the world stretched to fill its box, so it is
+now drawn at its true aspect ratio (contain-fit) with small ocean gaps
+top and bottom — Kevin said a small gap is fine. Card 10 was redrawn a
+third time (Kevin approved): the two presidents are now big and clearly
+shaking hands at the far left, while the big red car stays whole and
+dominant centre-right, exactly as in the approved sketch. The GTA hero
+was re-cropped so the poster's headline and caption line are gone
+entirely — the first re-crop had cut through the headline and left
+half-cut letters at the top edge; now the scene starts at clean sky and
+the "VI" billboard is whole with a margin. Three panels that showed
+only one lonely building were given living context: the SARB bank
+(street, people, a tree, the South African flag), the COP31 hall
+(audience, flags, a potted tree) and the Capitol (street, people, a
+tree). The main subjects stay whole with margins, and no new text was
+added inside any picture. Titles, texts, numbers and layout are
+unchanged.
