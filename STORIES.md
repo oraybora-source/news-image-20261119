@@ -50,28 +50,28 @@ out on purpose and are named in the DATE CHECK strip on the image.
 14. **New Delhi:** Congress targets Modi government over inflation.
 15. **Saada:** Saudi intercepts a Houthi missile.
 16. **Tokyo:** India and Japan hold 2+2 defence talks.
-17. **Australia:** The jobless rate jumps to 4.9%.
-18. **Global:** Bitcoin slips below $63,000.
-19. **Dakar:** Senegal holds Armed Forces Day.
-20. **Shenzhen:** Trump mentions ex-Nvidia boss Huang 'briefly' in
+17. **Shenzhen:** Trump mentions ex-Nvidia boss Huang 'briefly' in
     Xi talks.
+18. **Australia:** The jobless rate jumps to 4.9%.
+19. **Global:** Bitcoin slips below $63,000.
+20. **Shenzhen:** Japan PM Takaichi holds talks with Putin.
 21. **MAIB:** The Bayesian had a hidden wind weakness.
-22. **US:** Microsoft is in talks to sell AI services to ByteDance.
-23. **Shenzhen:** Japan PM Takaichi holds talks with Putin.
-24. **Tokyo:** Japan machinery orders dip 0.3%.
-25. **Brussels:** The EU delays methane rules by two years.
-26. **Kuala Lumpur:** UNHCR halts refugee registration in Malaysia.
-27. **Taiwan:** A bill against transnational repression is drafted.
-28. **Finland:** The first nuclear waste store is approved.
-29. **Wellington:** Bumrah strikes twice at lunch.
-30. **Hormuz:** A tanker is hit by a projectile.
-31. **Saudi Arabia:** Danger has passed in the south. (Reuters,
-    19 Nov 2026 — see the note below.)
-32. **UK:** The UK leasehold Bill enters Parliament. (Commonhold and
+22. **Tokyo:** Japan machinery orders dip 0.3%.
+23. **Hormuz:** A tanker is hit by a projectile.
+24. **US:** Microsoft is in talks to sell AI services to ByteDance.
+25. **UK:** The UK leasehold Bill enters Parliament. (Commonhold and
     Leasehold Reform Bill introduced to Parliament 19 Nov 2026;
     Inside Housing / HOA / gov.uk.)
-33. **Brasilia:** Lula blasts markets over speculation. (Reuters,
+26. **Kuala Lumpur:** UNHCR halts refugee registration.
+27. **Brussels:** The EU delays methane rules by two years.
+28. **Finland:** The first nuclear waste store is approved.
+29. **Wellington:** Bumrah strikes twice at lunch.
+30. **Saudi Arabia:** Danger has passed in the south. (Reuters,
+    19 Nov 2026 — see the note below.)
+31. **Taiwan:** A bill against transnational repression is drafted.
+32. **Brasilia:** Lula blasts markets over speculation. (Reuters,
     19 Nov 2026.)
+33. **Dakar:** Senegal holds Armed Forces Day.
 34. **Dakar:** Faye ordered the budget bill into force by decree.
     (AFP / Reuters, 19 Nov 2026; Decree No. 2026-2416.)
 
@@ -265,3 +265,21 @@ AFP dan Taipei Times. DITOLAK sesudah verifikasi: Estonia tutup
 perbatasan (diumumkan 15–16 Nov, tutupnya 1 Des), mogok umum Spanyol
 (11 Nov), senator AS soal ancaman siber AI (Reuters 18 Nov), RUU
 Epstein (diteken 19 Nov 2025, bukan 2026).
+
+v11 (20 Nov ~08:00 WIB, Kevin 07:47 WIB "kolom 2 terlalu melet,
+pindah-pindah berita biar sesuai"): briefs MORE STORIES disusun ulang
+supaya TIAP BARIS seragam jumlah barisnya — baris 1, 4, 7 semua 3
+baris, baris 2, 3, 5, 6 semua 2 baris — jadi tidak ada celah di kolom
+mana pun dan ketiga kolom terlihat sama ritmenya. Verifikasi dari
+piksel v10: kolom 2 ternyata penuh di SEMUA baris (6 dari 7 brief 3
+baris), kolom 1 dan 3 cuma 2 brief 3 baris — jadi sekadar tukar isi
+brief 25<->27 tidak mengubah apa-apa (keduanya 3 baris). Satu-satunya
+ubah teks: 26 Kuala Lumpur dipendekkan jadi "UNHCR halts refugee
+registration." (buang "in Malaysia" — label kota sudah Kuala Lumpur;
+fakta sama, Reuters 19 Nov) supaya jadi 2 baris; 9 brief 3 baris +
+12 brief 2 baris = 3 baris x 3 baris + 4 baris x 2 baris. Ukuran
+brief terpilih naik jadi 12pt/14px lh (baris total 238 px dari 241 px
+yang tersedia, slack 3 px). Diukur dari piksel: baris mulai
+717/759/787/815/857/885/913 di ketiga kolom, semua kolom berakhir
+y=955 — ritme identik. Set cerita, region counts, set kota peta,
+divider, margin, legenda, DATE CHECK, hero, dan kartu TIDAK berubah.

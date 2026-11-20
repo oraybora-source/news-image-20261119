@@ -337,26 +337,39 @@ CARDS = [
 # Briefs in reading order (numbers 14-31): city, region, text.
 # Every text is the first sentence of the verified story.
 BRIEFS = [
+    # v11 (20 Nov ~07:50 WIB, Kevin 07:47 WIB "kolom 2 terlalu melet,
+    # pindah-pindah berita biar sesuai"): briefs disusun ulang supaya
+    # TIAP BARIS seragam jumlah barisnya — baris 1, 4, 7 semua 3 baris,
+    # baris 2, 3, 5, 6 semua 2 baris — jadi tidak ada celah di kolom
+    # mana pun dan ketiga kolom terlihat sama ritmenya. Verifikasi v10:
+    # kolom 2 ternyata penuh di SEMUA baris (6 dari 7 brief 3 baris),
+    # kolom 1 dan 3 cuma 2 brief 3 baris — jadi tukar isi 25<->27 saja
+    # tidak mengubah apa-apa (keduanya 3 baris). Satu-satunya ubah teks:
+    # 26 Kuala Lumpur dipendekkan "UNHCR halts refugee registration."
+    # (buang "in Malaysia" — label kota sudah Kuala Lumpur; fakta sama,
+    # Reuters 19 Nov) supaya jadi 2 baris; 9 brief 3 baris + 12 brief
+    # 2 baris = 3 baris x 3 baris + 4 baris x 2 baris. Set cerita,
+    # region counts, dan set kota peta TIDAK berubah.
     ("New Delhi", "ASIA", "Congress targets the Modi government over inflation."),
     ("Saada", "MIDEAST", "Saudi intercepts a Houthi missile."),
     ("Tokyo", "ASIA", "India and Japan hold 2+2 defence talks."),
+    ("Shenzhen", "ASIA", "Trump mentions ex-Nvidia boss Huang 'briefly' in Xi talks."),
     ("Australia", "OCEANIA", "The jobless rate jumps to 4.9%."),
     ("Global", "WORLD", "Bitcoin slips below $63,000."),
-    ("Dakar", "AFRICA", "Senegal holds Armed Forces Day."),
-    ("Shenzhen", "ASIA", "Trump mentions ex-Nvidia boss Huang 'briefly' in Xi talks."),
-    ("MAIB", "WORLD", "The Bayesian had a hidden wind weakness."),
-    ("US", "WORLD", "Microsoft is in talks to sell AI services to ByteDance."),
     ("Shenzhen", "EUROPE", "Japan PM Takaichi holds talks with Putin."),
+    ("MAIB", "WORLD", "The Bayesian had a hidden wind weakness."),
     ("Tokyo", "ASIA", "Japan machinery orders dip 0.3%."),
+    ("Hormuz", "MIDEAST", "A tanker is hit by a projectile."),
+    ("US", "WORLD", "Microsoft is in talks to sell AI services to ByteDance."),
+    ("UK", "EUROPE", "The UK leasehold Bill enters Parliament."),
+    ("Kuala Lumpur", "ASIA", "UNHCR halts refugee registration."),
     ("Brussels", "EUROPE", "The EU delays methane rules by two years."),
-    ("Kuala Lumpur", "ASIA", "UNHCR halts refugee registration in Malaysia."),
-    ("Taiwan", "ASIA", "A bill against transnational repression is drafted."),
     ("Finland", "EUROPE", "The first nuclear waste store is approved."),
     ("Wellington", "OCEANIA", "Bumrah strikes twice at lunch."),
-    ("Hormuz", "MIDEAST", "A tanker is hit by a projectile."),
     ("Saudi Arabia", "MIDEAST", "Danger has passed in the south."),
-    ("UK", "EUROPE", "The UK leasehold Bill enters Parliament."),
+    ("Taiwan", "ASIA", "A bill against transnational repression is drafted."),
     ("Brasilia", "AMERICAS", "Lula blasts markets over speculation."),
+    ("Dakar", "AFRICA", "Senegal holds Armed Forces Day."),
     ("Dakar", "AFRICA", "Faye ordered the budget bill into force by decree."),
 ]
 
