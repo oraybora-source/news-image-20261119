@@ -195,3 +195,17 @@ wrong hemisphere; pin 8 sat in the South Atlantic. Johannesburg is
 28.0° East, 26.2° South; fixed to (28.0, -26.2), and the pin now
 falls on land in South Africa. Titles, texts, numbers and layout are
 unchanged.
+
+v8 (20 Nov 07:05 WIB, Kevin picked preview A + "MORE STORIES naik
+sedikit sejajar sama peta"): the map column is widened 260 -> 400 px
+(map 400x190, still natural-aspect 2:1, full world width, only
+Arctic/Antarctic ocean cropped, no stretch, no ocean gap); the legend
+is now 2 compact lines (10pt) under the map; briefs take the remaining
+~590 px in 3 columns at 12pt (largest size that fits, picked
+largest-first). The "Gaza" label is back (it fits at this scale) and
+the Brussels dot is shifted (-14,-14) so it clears the The Hague pin.
+Heroes + cards UNCHANGED from v7. MORE STORIES alignment: the first
+brief row now starts exactly at the map top — the slack is spread over
+the remaining rows only, so the briefs sit level with the map instead
+of starting ~14 px below it. Titles, texts, numbers and layout are
+otherwise unchanged.

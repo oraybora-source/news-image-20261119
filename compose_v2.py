@@ -125,6 +125,20 @@
 # offsets retuned for the smaller scale so all 11 dots return
 # (Tokyo, Australia, Wellington were lost in the v6 cover-fit crop).
 #
+# v8 changes (20 Nov ~07:05 WIB, Kevin picked preview A + "MORE
+# STORIES naik sedikit sejajar sama peta"): the map column is
+# widened 260 -> 400 px (map 400x190, still natural-aspect 2:1, full
+# world width, only Arctic/Antarctic ocean cropped, no stretch, no
+# ocean gap); the legend is now 2 compact lines (10pt) under the
+# map; briefs take the remaining ~590 px in 3 columns at 12pt
+# (largest size that fits, picked largest-first). The "Gaza" label
+# is back (it fits at this scale) and the Brussels dot is shifted
+# (-14,-14) so it clears the The Hague pin. Heroes + cards
+# UNCHANGED from v7. MORE STORIES alignment: the first brief row
+# now starts exactly at y+24 (= the map top) — the slack is spread
+# over the remaining rows only, so the briefs sit level with the
+# map instead of starting ~14 px below it.
+#
 # Run:  python3 compose_v2.py   (needs Pillow; writes entry.png here)
 # The entrypoint main.py only copies entry.png — it never re-renders.
 
@@ -183,7 +197,8 @@ SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 GAP = 1
 HERO_H, HERO_IMG, HERO_HEAD, HERO_DECK = 220, 121, 24, 13
 CARD_H, CARD_IMG, CARD_HEAD, CARD_SUM = 152, 70, 16, 13
-MAP_W = 260
+MAP_W = 400
+BRIEF_NCOLS = 3
 BRIEF_SIZE, BRIEF_LH = 14, 16
 
 # ---- stories ----
@@ -407,15 +422,15 @@ DOT_OFFSETS = {
     "Hormuz": (8, 11),
     "Saada": (10, 14),
     "Taiwan": (0, 14),
-    "Brussels": (-8, -8),
+    "Brussels": (-14, -14),  # v8: (-8,-8) lands within 9 px of the
+    # The Hague pin at the bigger scale; (-14,-14) clears it.
 }
 # Which pins get a name label, and on which side (l/r/a/b).
-# v7: "Gaza" dropped — at this scale its label collides with the
-# Shenzhen label AND the Saada dot/leader no matter the side
-# (checked all four); pin 4 is still identified by card 4's strip
-# and the legend. "Wellington"/"Tokyo" are dots, so their entries
-# here are inert.
-PIN_LABELS = {"Wellington": "l", "Tokyo": "a", "Shenzhen": "l"}  # v6: star near right edge, label below would run off-box
+# v8: "Gaza" is BACK — at the 400 px map scale its label fits
+# (v7 dropped it: at 260 px it collided on all four sides).
+# "Wellington"/"Tokyo" are dots, so their entries here are inert.
+PIN_LABELS = {"Wellington": "l", "Tokyo": "a", "Shenzhen": "l",
+              "Gaza": "l"}  # v6: star near right edge, label below would run off-box
 # Extra vertical nudge (px) for a label, on top of its side offset.
 # v7: Shenzhen -7 so the text clears the New Delhi pin above and the
 # Saudi Arabia dot below (both sub-1px clearances, verified visually).
@@ -542,16 +557,18 @@ def assign_strips(grid):
 # ---- map ----
 # Map NATURAL-ASPECT STRIP (v7, Kevin 20 Nov 06:41 WIB: "Maksudku ga
 # perlu di full vertikal"). The map does NOT have to fill the whole
+# Map NATURAL-ASPECT (v8, Kevin picked preview A 20 Nov 07:05 WIB):
+# the map column is widened 260 -> 400 px, so the map is 400x190 —
 # box height: full world width (lon -180..180, no left/right crop),
-# one undistorted scale, height follows the true ratio — 260 px wide
-# -> 130 px tall (2:1). Centre lon 10 so Wellington (174.8) still
-# fits inside the right edge with its pin; centre lat 0. The map box
-# follows the map height (see build()); the leftover space in the
-# left column holds a compact legend, not ocean.
-MAP_S = 260 / 360.0
+# one undistorted scale, height follows the true ratio — 400 px wide
+# -> 190 px tall (2:1, lat +-85°, only Arctic/Antarctic ocean
+# cropped). Centre lon 10 so Wellington (174.8) still fits inside
+# the right edge with its pin; centre lat 0. The space left in the
+# left column holds a compact 2-line legend, not ocean.
+MAP_S = 400 / 360.0
 MAP_CLON = 10.0
 MAP_CLAT = 0.0
-MAP_H = 130
+MAP_H = 190
 
 
 def project(lon, lat, mw, mh):
@@ -707,6 +724,32 @@ def draw_map_legend(d, x, y_top, w, y_bottom):
         y += lh
 
 
+def draw_map_legend_compact(d, x, y_top, w, y_bottom):
+    """Compact 2-line legend (v8, preview A): the map is 190 px tall,
+    so only ~26 px remain under it. Row 1: numbered pin. Row 2: gold
+    star + small dot, side by side."""
+    f_txt = load(SANS, 10)
+    f_num = load(SANS_B, 8)
+    y = y_top
+    cy = y + 6
+    d.ellipse([x + 2, cy - 6, x + 14, cy + 6],
+              fill=(40, 90, 160), outline=WHITE, width=1)
+    tw = d.textlength("4", font=f_num)
+    d.text((x + 8 - tw / 2, cy - 4), "4", font=f_num, fill=WHITE)
+    d.text((x + 20, y + 1), "Pin bernomor: nomor cerita", font=f_txt,
+           fill=INK)
+    y += 13
+    cy = y + 6
+    d.polygon(star_points(x + 8, cy, 7, 3), fill=GOLD, outline=NAVY)
+    tx = x + 20
+    d.text((tx, y + 1), "Bintang emas: KTT Shenzhen", font=f_txt, fill=INK)
+    tx += d.textlength("Bintang emas: KTT Shenzhen", font=f_txt) + 12
+    d.ellipse([tx + 2, cy - 3, tx + 8, cy + 3],
+              fill=(40, 130, 70), outline=WHITE, width=1)
+    tx += 12
+    d.text((tx, y + 1), "Titik kecil: brief lainnya", font=f_txt, fill=INK)
+
+
 # ---- page sections ----
 def draw_chrome(d):
     """Top line + masthead + deck. Returns y=100."""
@@ -832,7 +875,7 @@ def draw_briefs(d, x, y, w, total_h):
     with the number red bold and the city navy bold. Returns y+total_h."""
     d.text((x, y), "MORE STORIES FROM 19 NOVEMBER",
            font=load(SANS_B, 16), fill=NAVY)
-    col_w = (w - 2 * 12) // 3
+    col_w = (w - (BRIEF_NCOLS - 1) * 12) // BRIEF_NCOLS
     measured = []
     for i, (city, region, text) in enumerate(BRIEFS):
         num_txt = f"{14 + i}. "
@@ -843,7 +886,9 @@ def draw_briefs(d, x, y, w, total_h):
                                   col_w - 12 - head_w, col_w - 12, 4)
         assert "…" not in "".join(lines), f"brief cut: {city} {lines}"
         measured.append((city, region, num_txt, city_txt, head_w, lines))
-    groups = [list(range(i * 6, (i + 1) * 6)) for i in range(3)]
+    per = len(BRIEFS) // BRIEF_NCOLS
+    groups = [list(range(i * per, (i + 1) * per)) for i in
+              range(BRIEF_NCOLS)]
     avail = total_h - 24
     for ci, idxs in enumerate(groups):
         chunk = [measured[i] for i in idxs]
@@ -853,8 +898,15 @@ def draw_briefs(d, x, y, w, total_h):
         slack = avail - content
         assert slack >= 0, f"briefs do not fit: {content} > {avail}"
         n = len(chunk)
-        base, rem = divmod(slack, n) if n else (0, 0)
-        leads = [base + (1 if s < rem else 0) for s in range(n)]
+        # v8 (Kevin: MORE STORIES sejajar sama peta): the first row
+        # starts exactly at y+24 (= the map top); the slack is spread
+        # over the remaining rows only.
+        if n > 1:
+            base, rem = divmod(slack, n - 1)
+            leads = [0] + [base + (1 if s < rem else 0)
+                           for s in range(n - 1)]
+        else:
+            leads = [0]
         by = y + 24
         for si, (city, region, num_txt, city_txt, head_w, lines) in \
                 enumerate(chunk):
@@ -975,11 +1027,31 @@ def build():
     canvas.paste(map_im, (12, map_top))
     d.rectangle([12, map_top, 12 + MAP_W, map_top + MAP_H],
                 outline=CARD_LINE, width=1)
-    draw_map_legend(d, 12, map_top + MAP_H, MAP_W, bottom_y + bottom_h)
+    draw_map_legend_compact(d, 12, map_top + MAP_H, MAP_W,
+                            bottom_y + bottom_h)
     bx = 12 + MAP_W + 10
     bw = 1012 - bx
+    # v8 (preview A): briefs in the remaining ~590 px; pick the
+    # largest size that fits, largest-first.
+    chosen = None
+    for sz, lh in [(14, 16), (13, 15), (13, 14), (12, 14), (12, 13),
+                   (12, 12), (11, 13)]:
+        trial = canvas.copy()
+        dt = ImageDraw.Draw(trial)
+        try:
+            globals()["BRIEF_SIZE"] = sz
+            globals()["BRIEF_LH"] = lh
+            used = draw_briefs(dt, bx, bottom_y, bw, bottom_h)
+            assert used == bottom_y + bottom_h
+            chosen = (sz, lh)
+            break
+        except AssertionError:
+            continue
+    assert chosen is not None, "no brief size fits variant A"
+    globals()["BRIEF_SIZE"], globals()["BRIEF_LH"] = chosen
     used = draw_briefs(d, bx, bottom_y, bw, bottom_h)
     assert used == bottom_y + bottom_h, (used, bottom_y + bottom_h)
+    print(f"  briefs: {chosen[0]}pt/{chosen[1]}px lh")
     d.text((12, bottom_y), "WHERE IT HAPPENED", font=load(SANS_B, 14),
            fill=NAVY)
 
