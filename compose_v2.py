@@ -264,7 +264,7 @@ BRIEF_SIZE, BRIEF_LH = 14, 16
 # Heroes: file, headline, deck, strip, region, focus_y (0=top, 1=bottom).
 HEROES = [
     {
-        "file": "media-generation-hero-summit-v2-0-2ef3918e-852b-4192-82f2-4dc4ce2eedb5.png",
+        "file": "media-generation-v13-hero-summit-0-53ba1959-dde9-41ad-86cb-fd421ef74b06.png",
         "headline": "Trump, Xi and Putin meet in Shenzhen",
         "deck": "Trade truce and nuclear arms top the agenda as the three leaders meet in Shenzhen",
         "strip": "1 · SHENZHEN · SUMMIT",
@@ -272,7 +272,7 @@ HEROES = [
         "focus": 0.55,
     },
     {
-        "file": "media-generation-hero-gtavi-0-2ba192a8-4751-42fd-bb85-541410d0920c.png",
+        "file": "media-generation-v13-hero-gtavi-0-326a55a1-5713-4286-a146-42cbf19a27bc.png",
         "headline": "GTA VI launches worldwide",
         "deck": "Gamers enter Vice City as the launch begins on PlayStation 5 and Xbox",
         "strip": "2 · NEW YORK · GAMES",
@@ -280,7 +280,7 @@ HEROES = [
         "focus": 0.57,
     },
     {
-        "file": "media-generation-hero-ipo-v2-0-49b14d6a-813e-4e61-a965-6d53f5fc43fb.png",
+        "file": "media-generation-v13-hero-ipo-0-426806e4-929e-4dc1-9d8d-c9f4fb3c3c00.png",
         "headline": "Anthropic's $81.3bn IPO — a record",
         "deck": "Priced at $83 a share, the biggest IPO ever; markets rise ahead of the debut",
         "strip": "3 · NASDAQ · MARKETS",
@@ -291,6 +291,14 @@ HEROES = [
 
 # Cards in reading order (numbers 4-13): city, title, file, s1, s2,
 # strip, region, focus_y.
+# v13 (20 Nov, Kevin GAS 'buat 1 gaya'): SEMUA 13 panel digambar ulang
+# ke SATU house style (STYLE_GUIDE_v13.md) via media.generate_image mode
+# edit dari aset v12 — komposisi sketsa tetap, hanya rendering disatukan:
+# latar kertas krem, outline navy tipis, blok warna datar, tanpa gradien/
+# shading 3D/glow. Retry: Prague 1x (kerumunan diperbesar), Gaza 1x
+# (kotak-X navy liar dihapus), Kyiv 1x (rambu STOP terpotong tepi ->
+# digeser utuh + focus 0.53). Teks v12 TETAP (Hormuz 'at risk', COP31
+# '1.5C at risk', Gaza 'Israel says it crossed Gaza line').
 # v12 (20 Nov ~09:05 WIB, Kevin GAS "Perbaiki v12"; 3 perbaikan teks
 # murah dari audit pasca-kerja v11 — duel v11 GATE GAGAL, juri tidak
 # percaya "lost" di Hormuz + deck COP31 kontradiktif + headline Gaza
@@ -306,45 +314,45 @@ HEROES = [
 # legenda, DATE CHECK, footer TIDAK berubah.
 CARDS = [
     ("Gaza", "Israel says it crossed Gaza line",
-     "media-generation-card-gaza-0-f096b08f-9edf-4908-b025-7a2ac5ab476f.png",
+     "media-generation-v13-card-gaza-r1-0-35c4a190-d7da-4c2c-a6be-d50214c75e31.png",
      "Rare ground op", "Troops cross the ceasefire line",
      "4 · GAZA · CEASEFIRE LINE", "MIDEAST", 0.50),
     ("Paris", "IEA: energy shock reshapes world",
-     "media-generation-card-iea-weo-0-a7fea00f.png",
+     "media-generation-v13-card-iea-0-f77c880c-3b4f-4f21-96d4-03964ab43cff.png",
      "Hormuz crisis puts 2.8bn", "barrels of oil at risk",
      "5 · PARIS · ENERGY OUTLOOK", "WORLD", 0.50),
     ("The Hague", "ICJ verdict in Myanmar case",
-     "media-generation-card-icj-0-011a1eeb-2b66-41b8-a944-1d5ddf9a0fda.png",
+     "media-generation-v13-card-icj-0-54546ade-0559-476c-a828-2b7e0bb84d7c.png",
      "Judgment read today", "Rohingya case at UN court",
      "6 · THE HAGUE · GENOCIDE CASE", "EUROPE", 0.50),
     ("Puri", "Cyclone Akvan nears India coast",
-     "media-generation-card-cyclone-0-d9f8d73c-ef93-4c67-b3e4-31660ea6557b.png",
+     "media-generation-v13-card-cyclone-0-21c0b5f3-8cda-441b-9fcd-a4110a55f273.png",
      "Red alerts out; schools shut", "Machilipatnam to Puri",
      "7 · PURI · CYCLONE AKVAN", "ASIA", 0.50),
     ("Johannesburg", "South Africa holds rates",
-     "media-generation-card-sarb-0-1ae3bf5f-15dd-42cd-9cf8-09688ab8d5fa.png",
+     "media-generation-v13-card-sarb-0-520ca8a3-b008-44bf-b9f4-8090294432da.png",
      "SARB holds repo at 7.25%", "Rand at lowest of the year",
      "8 · JOHANNESBURG · RATES", "AFRICA", 0.50),
     ("Berlin", "Coalition of the Willing in Berlin",
-     "media-generation-card-berlin-0-bf1abbaa-3f07-4a81-bf3c-09cc2250243e.png",
+     "media-generation-v13-card-berlin-0-040f2e20-43bc-418d-baf4-1e27df946478.png",
      "Witkoff and Kushner attend", "Coalition meets in Berlin",
      "9 · BERLIN · COALITION TALKS", "EUROPE", 0.50),
     ("Mpigi", "Two presidents open car plant",
-     "media-generation-card-uganda-v2-0-3a6cb6aa-71d0-4b1a-8a03-8950e79bddec.png",
+     "media-generation-v13-card-uganda-0-7192af64-9d00-4084-9f35-5922c8ab2400.png",
      "Museveni and Samia at launch", "Double Q in Mpigi",
      "10 · MPIGI · CAR PLANT", "AFRICA", 0.50),
     ("Antalya", "COP31 draft drops fossil fuel",
-     "media-generation-card-cop31-0-b3cba7ef-38d6-43dc-b5ed-902701778d89.png",
+     "media-generation-v13-card-cop31-0-a15c90a6-c074-48c0-84ff-e663bb203ac4.png",
      "Draft drops fossil phase-out", "1.5°C at risk",
      "11 · ANTALYA · COP31 DRAFT", "MIDEAST", 0.50),
     ("Prague", "Prague protest for free media",
-     "media-generation-card-prague-0-85b675a9-6723-4533-ac21-802291588bd5.png",
+     "media-generation-v13-card-prague-r1-0-69e46e74-e201-4e71-928e-28e4e47039cb.png",
      "Crowds demand free press", "Huge march in Prague",
      "12 · PRAGUE · MEDIA PROTEST", "EUROPE", 0.50),
     ("Kyiv", "Zelensky: US blocks missiles",
-     "media-generation-card-kyiv-0-bd53f931-1191-476d-9dd6-cafd2dc91fdd.png",
+     "media-generation-v13-card-kyiv-r1-0-b3da1ed4-1f4a-4d5c-94f8-7480473a9708.png",
      "Kyiv accuses Washington", "Missile deliveries held back",
-     "13 · KYIV · MISSILE DELIVERIES", "EUROPE", 0.50),
+     "13 · KYIV · MISSILE DELIVERIES", "EUROPE", 0.53),
 ]
 
 # Briefs in reading order (numbers 14-31): city, region, text.
