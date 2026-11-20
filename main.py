@@ -1,7 +1,7 @@
-# news-image-20261119 final entry v2 (Python 3.13, standard library only).
+# news-image-20261119 final entry v15 (Python 3.13, standard library only).
 #
 # The image is entry.png in this repository, composed by
-# compose_v2.py from illustration assets in assets/ plus text
+# compose_v15.py from illustration assets in assets/ plus text
 # rendered from verified news strings (see STORIES.md). This program
 # writes that image to the grader's output directory (/output, or
 # MAKEFUN_OUTPUT_DIR locally). It runs twice in grading; both runs

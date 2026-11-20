@@ -1,9 +1,9 @@
-# news-image-20261119 — final entry v2, 34 stories
+# news-image-20261119 — final entry v15, 34 stories
 
 One image summing up the world's news of **Thursday 19 November 2026**.
 All 34 stories are dated 19 November 2026; 18 November items (Fed
 minutes, Voyager 1, Nvidia H200 halt, EU loan, Van Gogh sale) were left
-out on purpose and are named in the DATE CHECK strip on the image.
+out on purpose and are named in the DATE CHECK strip on the image (v15: 10 items — Fed minutes, Voyager 1, Nvidia H200 halt, EU €45bn loan, Van Gogh sale, Ruto address in Kenya, COP31 fossil-fuel coalition at 30, Uganda Airlines first flight, Trump–Xi hug, GST2 launch).
 
 ## Heroes (3)
 

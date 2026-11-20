@@ -1,0 +1,436 @@
+{
+ "version": "v15",
+ "stories": 34,
+ "geometry": {
+  "timeline_h": 36,
+  "timeline_pad": 6,
+  "reg_pad": 4,
+  "hero_h": 200,
+  "hero_img": 94,
+  "card_h": 141,
+  "card_img": 51,
+  "strip_h": 66,
+  "bottom_y": 698,
+  "dc_y": 968
+ },
+ "region_numbers": {
+  "EUROPE": [
+   6,
+   9,
+   12,
+   13,
+   20,
+   25,
+   27,
+   28
+  ],
+  "AMERICAS": [
+   2,
+   3,
+   32
+  ],
+  "ASIA": [
+   1,
+   7,
+   14,
+   16,
+   17,
+   22,
+   26,
+   31
+  ],
+  "MIDEAST": [
+   4,
+   11,
+   15,
+   23,
+   30
+  ],
+  "AFRICA": [
+   8,
+   10,
+   33,
+   34
+  ],
+  "OCEANIA": [
+   18,
+   29
+  ],
+  "WORLD": [
+   5,
+   19,
+   21,
+   24
+  ]
+ },
+ "timeline": {
+  "spans": [
+   {
+    "event": "AUCKLAND \u2014 GTA VI unlocks",
+    "hour": "00:00",
+    "cx": 150,
+    "x0": 77.2,
+    "x1": 222.8
+   },
+   {
+    "event": "IEA \u2014 Outlook released",
+    "hour": "05:00",
+    "cx": 331,
+    "x0": 272.3,
+    "x1": 389.7
+   },
+   {
+    "event": "THE HAGUE \u2014 ICJ ruling read",
+    "hour": "10:00",
+    "cx": 512,
+    "x0": 439.3,
+    "x1": 584.7
+   },
+   {
+    "event": "NEW YORK \u2014 ANT first trade",
+    "hour": "11:48",
+    "cx": 693,
+    "x0": 621.4,
+    "x1": 764.6
+   },
+   {
+    "event": "SHENZHEN \u2014 Three leaders meet",
+    "hour": "16:27",
+    "cx": 874,
+    "x0": 789.0,
+    "x1": 959.0
+   }
+  ],
+  "gaps": [
+   49.5,
+   49.6,
+   36.7,
+   24.4
+  ],
+  "min_gap": 24.4
+ },
+ "briefs": {
+  "size": 12,
+  "lh": 12,
+  "row_hs": [
+   24,
+   12,
+   24,
+   24,
+   12,
+   24,
+   24
+  ],
+  "row_lines": [
+   [
+    2,
+    2,
+    2
+   ],
+   [
+    1,
+    1,
+    1
+   ],
+   [
+    2,
+    1,
+    2
+   ],
+   [
+    2,
+    2,
+    2
+   ],
+   [
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    2,
+    1
+   ],
+   [
+    2,
+    2,
+    2
+   ]
+  ],
+  "row_gap": 3,
+  "y": 772,
+  "h": 196
+ },
+ "region_strip": {
+  "y": 702,
+  "h": 66,
+  "dots": [
+   {
+    "n": 6,
+    "region": "EUROPE",
+    "cx": 45.9,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 9,
+    "region": "EUROPE",
+    "cx": 70.9,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 12,
+    "region": "EUROPE",
+    "cx": 95.9,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 13,
+    "region": "EUROPE",
+    "cx": 120.9,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 20,
+    "region": "EUROPE",
+    "cx": 45.9,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 25,
+    "region": "EUROPE",
+    "cx": 70.9,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 27,
+    "region": "EUROPE",
+    "cx": 95.9,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 28,
+    "region": "EUROPE",
+    "cx": 120.9,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 2,
+    "region": "AMERICAS",
+    "cx": 213.8,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 3,
+    "region": "AMERICAS",
+    "cx": 238.8,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 32,
+    "region": "AMERICAS",
+    "cx": 226.3,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 1,
+    "region": "ASIA",
+    "cx": 331.6,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 7,
+    "region": "ASIA",
+    "cx": 356.6,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 14,
+    "region": "ASIA",
+    "cx": 381.6,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 16,
+    "region": "ASIA",
+    "cx": 406.6,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 17,
+    "region": "ASIA",
+    "cx": 331.6,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 22,
+    "region": "ASIA",
+    "cx": 356.6,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 26,
+    "region": "ASIA",
+    "cx": 381.6,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 31,
+    "region": "ASIA",
+    "cx": 406.6,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 4,
+    "region": "MIDEAST",
+    "cx": 487.0,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 11,
+    "region": "MIDEAST",
+    "cx": 512.0,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 15,
+    "region": "MIDEAST",
+    "cx": 537.0,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 23,
+    "region": "MIDEAST",
+    "cx": 499.5,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 30,
+    "region": "MIDEAST",
+    "cx": 524.5,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 8,
+    "region": "AFRICA",
+    "cx": 642.4,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 10,
+    "region": "AFRICA",
+    "cx": 667.4,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 33,
+    "region": "AFRICA",
+    "cx": 642.4,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 34,
+    "region": "AFRICA",
+    "cx": 667.4,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 18,
+    "region": "OCEANIA",
+    "cx": 797.7,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 29,
+    "region": "OCEANIA",
+    "cx": 797.7,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 5,
+    "region": "WORLD",
+    "cx": 928.1,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 19,
+    "region": "WORLD",
+    "cx": 953.1,
+    "cy": 729,
+    "r": 11
+   },
+   {
+    "n": 21,
+    "region": "WORLD",
+    "cx": 928.1,
+    "cy": 752,
+    "r": 11
+   },
+   {
+    "n": 24,
+    "region": "WORLD",
+    "cx": 953.1,
+    "cy": 752,
+    "r": 11
+   }
+  ],
+  "dot_count": 34
+ },
+ "datecheck_widths": [
+  {
+   "line": "All 34 stories are 19 Nov 2026 \u2014 left out: Fed minutes (Wed 2pm), Voyager 1 (Wed 10:16 GMT), Nvidia H200 halt, EU \u20ac45bn loan,",
+   "width": 649.6,
+   "fits_882": true
+  },
+  {
+   "line": "Van Gogh sale $190.4m, Ruto address in Kenya, COP31 fossil-fuel coalition at 30, Uganda Airlines first flight, Trump\u2013Xi hug, GST2 launch \u2014 all Wed 18 Nov, not on this page.",
+   "width": 866.5,
+   "fits_882": true
+  }
+ ],
+ "audits": {
+  "strip_check_violations": [],
+  "top_color": {
+   "pairs": 18,
+   "min_dist": 59.3,
+   "violations": []
+  },
+  "white_above_strips": []
+ },
+ "file": {
+  "path": "/home/hatch/workspace/makefun/news-image-20261119/repo-v15/entry.png",
+  "bytes": 448016,
+  "sha256": "d912f1772c0ec22cc35bd8d42c9eeafb01c8f8932af1b5aca50b0f5b528d9d29"
+ }
+}
