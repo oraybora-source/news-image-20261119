@@ -157,6 +157,47 @@
 # di ketiga kolom; slack tidak lagi dibagi per kolom (itu yang bikin
 # barisnya zig-zag: kolom 2 rapat 2-6px, kolom 1 renggang 12-16px).
 #
+# v10 changes (20 Nov ~07:30 WIB, Kevin 07:27 + 07:28 + 07:29 + 07:31 WIB):
+#  - +3 brief (total 34 cerita, 21 brief, 7 baris/kolom) supaya 3 kolom
+#    MORE STORIES selaras atas-bawah: London (UK leasehold Bill masuk
+#    Parlemen 19 Nov), Brasilia (Lula kecam pasar atas "spekulasi",
+#    Reuters 19 Nov), Dakar (Faye berlakukan anggaran lewat dekrit,
+#    AFP/Reuters 19 Nov). DITOLAK sesudah verifikasi: Estonia (pengumuman
+#    tutup perbatasan 15-16 Nov, tutupnya 1 Des), Spanyol (mogok umum
+#    11 Nov, bukan 19 Nov), senator AS soal AI (Reuters 18 Nov), Epstein
+#    (RUU diteken 19 Nov 2025, bukan 2026). Region: EUROPE 7->8,
+#    AMERICAS 2->3, AFRICA 3->4; TOTAL 34; DATE CHECK "All 34 stories".
+#  - Baris brief kini TINGGI VARIABEL (baris = brief terpanjang di
+#    baris itu x leading): 6 baris x 36px + 1 baris x 24px = 240px.
+#    Supaya muat, bagian atas dipadatkan 35px TANPA mengecilkan font
+#    dan TANPA mengubah rasio gambar: masthead 100->96, region bar
+#    36->32, numbers strip 58->54, hero image 121->110 (box 220->209),
+#    card image 70->64 (box 152->146). Margin dikit di atas (judul ->
+#    baris pertama) dan di bawah (baris terakhir -> DATE CHECK).
+#  - Legenda peta ke bahasa Inggris (Kevin 07:29 WIB): "Numbered pin:
+#    story number / Gold star: Shenzhen summit / Small dot: other
+#    briefs" — sebelumnya bahasa Indonesia, satu-satunya teks
+#    non-Inggris di gambar. Legenda kini di tengah vertikal di
+#    ruangnya.
+#  - Garis pembatas navy 2px selebar penuh band bawah, tepat di atas
+#    judul WHERE IT HAPPENED / MORE STORIES (Kevin 07:31 WIB).
+#  - Brasilia ditambah ke PLACES (-47.9, -15.8) untuk dot brief 33;
+#    dot brief 32 (label "UK", koordinat London) tabrakan pin Den Haag
+#    (jarak ~5px < 9px) jadi di-skip oleh compositor (tercatat di log);
+#    dot Dakar ke-2 di-skip karena koordinat sama dengan dot Dakar
+#    brief 19. Label brief 32 "UK" (bukan "London") supaya teksnya
+#    muat 2 baris — mengikuti konvensi brief 22 ("US: Microsoft…").
+#    KOREKSI susun kolom: brief baru 32-34 masuk kolom 3 (bukan baris
+#    ke-7 tiap kolom) — baris ke-7 = brief 20, 27, 34. Brief 20
+#    (Shenzhen) 3 baris, jadi brief 27 dan 34 DIPERPANJANG kalimatnya
+#    supaya sama-sama 3 baris dan ketiga kolom berakhir di y yang
+#    sama: 27 "A bill against transnational repression is drafted."
+#    (MOJ kirim draf amandemen Anti-Infiltration Act ke Cabinet;
+#    diumumkan di sidang 18 Nov, dilapor Taipei Times 19 Nov) dan 34
+#    "Faye ordered the budget bill into force by decree." (AFP/
+#    Reuters 19 Nov). Baris ke-7 kini 3/3/3 baris; jumlah baris
+#    total tetap 240px, anggaran band tidak berubah.
+#
 # Run:  python3 compose_v2.py   (needs Pillow; writes entry.png here)
 # The entrypoint main.py only copies entry.png — it never re-renders.
 
@@ -213,8 +254,8 @@ SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 # ---- geometry (B-rev1, unchanged) ----
 GAP = 1
-HERO_H, HERO_IMG, HERO_HEAD, HERO_DECK = 220, 121, 24, 13
-CARD_H, CARD_IMG, CARD_HEAD, CARD_SUM = 152, 70, 16, 13
+HERO_H, HERO_IMG, HERO_HEAD, HERO_DECK = 209, 110, 24, 13
+CARD_H, CARD_IMG, CARD_HEAD, CARD_SUM = 146, 64, 16, 13
 MAP_W = 400
 BRIEF_NCOLS = 3
 BRIEF_SIZE, BRIEF_LH = 14, 16
@@ -309,11 +350,14 @@ BRIEFS = [
     ("Tokyo", "ASIA", "Japan machinery orders dip 0.3%."),
     ("Brussels", "EUROPE", "The EU delays methane rules by two years."),
     ("Kuala Lumpur", "ASIA", "UNHCR halts refugee registration in Malaysia."),
-    ("Taiwan", "ASIA", "A transnational repression bill is drafted."),
+    ("Taiwan", "ASIA", "A bill against transnational repression is drafted."),
     ("Finland", "EUROPE", "The first nuclear waste store is approved."),
     ("Wellington", "OCEANIA", "Bumrah strikes twice at lunch."),
     ("Hormuz", "MIDEAST", "A tanker is hit by a projectile."),
     ("Saudi Arabia", "MIDEAST", "Danger has passed in the south."),
+    ("UK", "EUROPE", "The UK leasehold Bill enters Parliament."),
+    ("Brasilia", "AMERICAS", "Lula blasts markets over speculation."),
+    ("Dakar", "AFRICA", "Faye ordered the budget bill into force by decree."),
 ]
 
 # Big numbers strip (number, caption, region of the divider colour).
@@ -326,16 +370,16 @@ NUMBERS = [
     ("$63,000", "Bitcoin slips below, down 2.7%", "WORLD"),
 ]
 
-COUNTS = [("EUROPE", 7), ("THE AMERICAS", 2), ("ASIA-PACIFIC", 8),
-          ("MIDEAST", 5), ("AFRICA", 3), ("OCEANIA", 2), ("WORLD", 4)]
-TOTAL = 31
+COUNTS = [("EUROPE", 8), ("THE AMERICAS", 3), ("ASIA-PACIFIC", 8),
+          ("MIDEAST", 5), ("AFRICA", 4), ("OCEANIA", 2), ("WORLD", 4)]
+TOTAL = 34
 
-DATECHECK_MSG = ("All 31 stories are 19 November 2026 — Fed minutes, "
+DATECHECK_MSG = ("All 34 stories are 19 November 2026 — Fed minutes, "
                  "Voyager 1, Nvidia H200 halt, EU loan, Van Gogh sale: "
                  "all 18 Nov, left out.")
 SOURCES_LINE = ("Sources: Reuters · BBC · The Guardian · Fox News · ABS · "
                 "CoinGecko · Al Jazeera · gov.uk · TBS · Daily Star · ANI · "
-                "Kampala Post · NBS TV · ECOWAS · PropFlow360 · IEA")
+                "Kampala Post · NBS TV · ECOWAS · PropFlow360 · IEA · AFP · Taipei Times")
 
 # ---- map data ----
 # Simplified continent outlines (lon, lat), equirectangular.
@@ -397,6 +441,7 @@ PLACES = {
     "Shenzhen": (114.1, 22.5),
     "New Delhi": (77.2, 28.6),
     "London": (-0.1, 51.5),
+    "UK": (-0.1, 51.5),  # v10: label brief 32 (sama koordinat London)
     "UK": (-0.1, 51.5),
     "US": (-77.0, 38.9),
     "China": (116.4, 39.9),
@@ -411,6 +456,7 @@ PLACES = {
     "Antalya": (30.7, 36.9),
     "Dakar": (-17.4, 14.7),
     "Paris": (2.35, 48.85),  # v9: kartu 5 IEA WEO (markas IEA, Paris)
+    "Brasilia": (-47.9, -15.8),  # v10: dot brief 33 (Lula, Reuters 19 Nov)
 }
 
 # Hand-tuned pin offsets (dx, dy in px) so clustered pins do not
@@ -721,9 +767,9 @@ def draw_map_legend(d, x, y_top, w, y_bottom):
     f_txt = load(SANS, 11)
     f_num = load(SANS_B, 8)
     rows = [
-        ("pin", "Pin bernomor: nomor cerita"),
-        ("star", "Bintang emas: KTT Shenzhen"),
-        ("dot", "Titik kecil: brief lainnya"),
+        ("pin", "Numbered pin: story number"),
+        ("star", "Gold star: Shenzhen summit"),
+        ("dot", "Small dot: other briefs"),
     ]
     lh = 18
     y = y_top + (y_bottom - y_top - len(rows) * lh) // 2
@@ -746,38 +792,39 @@ def draw_map_legend(d, x, y_top, w, y_bottom):
 def draw_map_legend_compact(d, x, y_top, w, y_bottom):
     """Compact 2-line legend (v8, preview A): the map is 190 px tall,
     so only ~26 px remain under it. Row 1: numbered pin. Row 2: gold
-    star + small dot, side by side."""
+    star + small dot, side by side. v10: English text (Kevin 07:29 WIB)
+    and vertically centred in the leftover space."""
     f_txt = load(SANS, 10)
     f_num = load(SANS_B, 8)
-    y = y_top
+    y = y_top + (y_bottom - y_top - 26) // 2
     cy = y + 6
     d.ellipse([x + 2, cy - 6, x + 14, cy + 6],
               fill=(40, 90, 160), outline=WHITE, width=1)
     tw = d.textlength("4", font=f_num)
     d.text((x + 8 - tw / 2, cy - 4), "4", font=f_num, fill=WHITE)
-    d.text((x + 20, y + 1), "Pin bernomor: nomor cerita", font=f_txt,
+    d.text((x + 20, y + 1), "Numbered pin: story number", font=f_txt,
            fill=INK)
     y += 13
     cy = y + 6
     d.polygon(star_points(x + 8, cy, 7, 3), fill=GOLD, outline=NAVY)
     tx = x + 20
-    d.text((tx, y + 1), "Bintang emas: KTT Shenzhen", font=f_txt, fill=INK)
-    tx += d.textlength("Bintang emas: KTT Shenzhen", font=f_txt) + 12
+    d.text((tx, y + 1), "Gold star: Shenzhen summit", font=f_txt, fill=INK)
+    tx += d.textlength("Gold star: Shenzhen summit", font=f_txt) + 12
     d.ellipse([tx + 2, cy - 3, tx + 8, cy + 3],
               fill=(40, 130, 70), outline=WHITE, width=1)
     tx += 12
-    d.text((tx, y + 1), "Titik kecil: brief lainnya", font=f_txt, fill=INK)
+    d.text((tx, y + 1), "Small dot: other briefs", font=f_txt, fill=INK)
 
 
 # ---- page sections ----
 def draw_chrome(d):
-    """Top line + masthead + deck. Returns y=100."""
+    """Top line + masthead + deck. Returns y=96 (v10: was 100)."""
     d.text((12, 8), "ALL DATED 19 NOV", font=load(SANS_B, 11), fill=RED)
     d.text((W // 2, 8), "THE WORLD IN ONE DAY", font=load(SANS_B, 11),
            fill=NAVY, anchor="ma")
     d.text((1012, 8), f"{TOTAL} STORIES", font=load(SANS_B, 11), fill=RED,
            anchor="ra")
-    y_base = 72
+    y_base = 68
     w1 = d.textlength("THURSDAY ", font=load(SERIF, 54))
     w2 = d.textlength("19", font=load(SERIF, 62))
     w3 = d.textlength(" NOVEMBER 2026", font=load(SERIF, 54))
@@ -790,13 +837,13 @@ def draw_chrome(d):
            fill=INK, anchor="ls")
     deck = ("a three-president summit, GTA VI on sale, "
             "an $81.3bn IPO, the ICJ verdict, a storm off India")
-    d.text((W // 2, 82), deck, font=load(SANS_B, 14), fill=RED, anchor="ma")
-    return 100
+    d.text((W // 2, 78), deck, font=load(SANS_B, 14), fill=RED, anchor="ma")
+    return 96
 
 
 def draw_region_bar(d, y):
-    """Navy title cell + 7 region-tinted segments. Returns y + 36."""
-    hgt = 36
+    """Navy title cell + 7 region-tinted segments. Returns y + 32 (v10)."""
+    hgt = 32
     x0, x1 = 12, 1012
     title_w = 204
     d.rectangle([x0, y, x0 + title_w, y + hgt], fill=NAVY)
@@ -831,16 +878,16 @@ def draw_region_bar(d, y):
 
 def draw_numbers(d, y0):
     """Six big numbers with captions, no boxes, thin region-coloured
-    dividers between segments. Returns y0 + 58."""
-    hgt = 58
+    dividers between segments. Returns y0 + 54 (v10: was 58)."""
+    hgt = 54
     x = 12
     for i, (num, label, region) in enumerate(NUMBERS):
         bw = 163 if i < 5 else 165
         rc = REGION_COLORS[region]
-        d.text((x + 8, y0 + 3), num, font=load(SANS_B, 22), fill=NAVY)
+        d.text((x + 8, y0 + 2), num, font=load(SANS_B, 22), fill=NAVY)
         clines = wrap(d, label, load(SANS_B, 11), bw - 16, 2)
         assert "…" not in "".join(clines), f"number caption cut: {label}"
-        cy = y0 + 30
+        cy = y0 + 26
         for ln in clines:
             d.text((x + 8, cy), ln, font=load(SANS_B, 11), fill=INK)
             cy += 14
@@ -890,9 +937,18 @@ def draw_card(canvas, d, x, y, w, card, strip_color, row, col):
 
 
 def draw_briefs(d, x, y, w, total_h):
-    """MORE STORIES: 3 even columns of 6 briefs each, "N. City: text…"
-    with the number red bold and the city navy bold. Returns y+total_h."""
-    d.text((x, y), "MORE STORIES FROM 19 NOVEMBER",
+    """MORE STORIES: 3 even columns of 7 briefs each, "N. City: text…"
+    with the number red bold and the city navy bold. Returns y+total_h.
+    v10: rows are VARIABLE height (tallest brief in the row x leading),
+    so row k starts at the same y in all three columns and all three
+    columns end at the same y. Small margins above the first row and
+    below the last row (Kevin 07:28 WIB); the title sits below the
+    divider line drawn by build() (Kevin 07:31 WIB)."""
+    TITLE_DY = 4
+    TITLE_ZONE = 20
+    M_TOP = 6
+    M_BOTTOM = 6
+    d.text((x, y + TITLE_DY), "MORE STORIES FROM 19 NOVEMBER",
            font=load(SANS_B, 16), fill=NAVY)
     col_w = (w - (BRIEF_NCOLS - 1) * 12) // BRIEF_NCOLS
     measured = []
@@ -908,27 +964,26 @@ def draw_briefs(d, x, y, w, total_h):
     per = len(BRIEFS) // BRIEF_NCOLS
     groups = [list(range(i * per, (i + 1) * per)) for i in
               range(BRIEF_NCOLS)]
-    avail = total_h - 24
-    # v9 (Kevin 07:14 WIB: "jangan ada gap, 3 kolom harus sama atas
-    # bawahnya"): FIXED ROW HEIGHT. v8 spread each column's slack
-    # over its own gaps, so the rows zig-zagged (measured on v8:
-    # col 1 gaps 12-16 px, col 2 gaps 2-6 px, col 3 gaps 10-13 px)
-    # even though tops (748) and bottoms (966) already matched.
-    # Every row is now exactly 3 lines tall, so row k starts at the
-    # same y in all three columns, tops and bottoms match, and the
-    # gaps are uniform. A brief of fewer lines leaves its empty
-    # space inside its own row (even leading, like a table).
-    row_h = 3 * BRIEF_LH
     assert all(len(lines) <= 3 for (_, _, _, _, _, lines) in measured), \
         "brief over 3 lines"
-    assert 6 * row_h <= avail, \
-        f"briefs do not fit: {6 * row_h} > {avail}"
+    nrows = per
+    row_hs = [max(len(measured[i][5]) for i in
+                  [g[r] for g in groups]) * BRIEF_LH for r in range(nrows)]
+    avail = total_h - TITLE_DY - TITLE_ZONE - M_TOP - M_BOTTOM
+    assert sum(row_hs) <= avail, \
+        f"briefs do not fit: {sum(row_hs)} > {avail}"
+    # leftover slack (if any) lands in the bottom margin.
+    row_ys = []
+    yy = y + TITLE_DY + TITLE_ZONE + M_TOP
+    for rh in row_hs:
+        row_ys.append(yy)
+        yy += rh
     for ci, idxs in enumerate(groups):
         chunk = [measured[i] for i in idxs]
         bx = x + ci * (col_w + 12)
         for si, (city, region, num_txt, city_txt, head_w, lines) in \
                 enumerate(chunk):
-            by = y + 24 + si * row_h
+            by = row_ys[si]
             ch = len(lines) * BRIEF_LH
             rc = REGION_COLORS[region]
             d.rectangle([bx, by + 2, bx + 5, by + ch - 2], fill=rc)
@@ -1040,6 +1095,8 @@ def build():
 
     bottom_y = y
     bottom_h = 964 - bottom_y
+    # v10 (Kevin 07:31 WIB): thin navy divider above the bottom band.
+    d.rectangle([12, bottom_y, 1012, bottom_y + 1], fill=NAVY)
     map_top = bottom_y + 24
     map_im, mlog = draw_map(MAP_W, MAP_H)
     canvas.paste(map_im, (12, map_top))
@@ -1070,7 +1127,7 @@ def build():
     used = draw_briefs(d, bx, bottom_y, bw, bottom_h)
     assert used == bottom_y + bottom_h, (used, bottom_y + bottom_h)
     print(f"  briefs: {chosen[0]}pt/{chosen[1]}px lh")
-    d.text((12, bottom_y), "WHERE IT HAPPENED", font=load(SANS_B, 14),
+    d.text((12, bottom_y + 4), "WHERE IT HAPPENED", font=load(SANS_B, 14),
            fill=NAVY)
 
     draw_datecheck(d, 968)

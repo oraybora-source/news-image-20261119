@@ -1,7 +1,7 @@
-# news-image-20261119 — final entry v2, 31 stories
+# news-image-20261119 — final entry v2, 34 stories
 
 One image summing up the world's news of **Thursday 19 November 2026**.
-All 31 stories are dated 19 November 2026; 18 November items (Fed
+All 34 stories are dated 19 November 2026; 18 November items (Fed
 minutes, Voyager 1, Nvidia H200 halt, EU loan, Van Gogh sale) were left
 out on purpose and are named in the DATE CHECK strip on the image.
 
@@ -45,7 +45,7 @@ out on purpose and are named in the DATE CHECK strip on the image.
     Kyiv accuses Washington; missile deliveries held back.
     (Reuters, The Guardian)
 
-## Briefs (18)
+## Briefs (21)
 
 14. **New Delhi:** Congress targets Modi government over inflation.
 15. **Saada:** Saudi intercepts a Houthi missile.
@@ -61,17 +61,24 @@ out on purpose and are named in the DATE CHECK strip on the image.
 24. **Tokyo:** Japan machinery orders dip 0.3%.
 25. **Brussels:** The EU delays methane rules by two years.
 26. **Kuala Lumpur:** UNHCR halts refugee registration in Malaysia.
-27. **Taiwan:** A transnational repression bill is drafted.
+27. **Taiwan:** A bill against transnational repression is drafted.
 28. **Finland:** The first nuclear waste store is approved.
 29. **Wellington:** Bumrah strikes twice at lunch.
 30. **Hormuz:** A tanker is hit by a projectile.
 31. **Saudi Arabia:** Danger has passed in the south. (Reuters,
     19 Nov 2026 — see the note below.)
+32. **UK:** The UK leasehold Bill enters Parliament. (Commonhold and
+    Leasehold Reform Bill introduced to Parliament 19 Nov 2026;
+    Inside Housing / HOA / gov.uk.)
+33. **Brasilia:** Lula blasts markets over speculation. (Reuters,
+    19 Nov 2026.)
+34. **Dakar:** Faye ordered the budget bill into force by decree.
+    (AFP / Reuters, 19 Nov 2026; Decree No. 2026-2416.)
 
 ## What changed from the v1 entry (39 stories)
 
 - The layout follows the approved 2-row × 5-column sketch: 3 heroes,
-  10 cards, 18 briefs — 31 stories in all. Text is bigger and fewer
+  10 cards, 21 briefs — 34 stories in all. Text is bigger and fewer
   stories are crammed in, so every headline and brief reads cleanly.
 - **Yemen brief removed.** The sketch carried "Yemen: Houthi rocket
   kills 53 soldiers". Checking it before the build found it happened
@@ -87,7 +94,7 @@ out on purpose and are named in the DATE CHECK strip on the image.
   out.
 - **Uganda card wording fixed.** The sketch read "Museveni and Samia
   open plant"; the entry reads "Museveni and Samia at launch".
-- **DATE CHECK wording fixed.** It now reads "All 31 stories are
+- **DATE CHECK wording fixed.** It now reads "All 34 stories are
   19 November 2026 — Fed minutes, Voyager 1, Nvidia H200 halt, EU
   loan, Van Gogh sale: all 18 Nov, left out."
 - **Map improved.** Continent outlines are 2px, pins are bigger with
@@ -95,8 +102,8 @@ out on purpose and are named in the DATE CHECK strip on the image.
   Taiwan, Saudi Arabia) are skipped on collision and logged by the
   compositor — the stories are still in the briefs and the map still
   shows their region's pins.
-- Region counts: EUROPE 7, THE AMERICAS 2, ASIA-PACIFIC 8,
-  MIDEAST 5, AFRICA 3, OCEANIA 2, WORLD 4 — 31 in all.
+- Region counts: EUROPE 8, THE AMERICAS 3, ASIA-PACIFIC 8,
+  MIDEAST 5, AFRICA 4, OCEANIA 2, WORLD 4 — 34 in all.
 
 ## How the image was made
 
@@ -231,3 +238,30 @@ ketiga kolom, atas dan bawah rata (sisa: baris terakhir kolom 2
 berakhir 12 px lebih bawah karena brief Brussels 3 baris vs Dakar/
 Saudi Arabia 2 baris — tidak bisa diratakan tanpa ubah teks brief).
 Hero, kartu lain, peta, DATE CHECK tidak berubah.
+
+v10 (20 Nov ~08:00 WIB, Kevin 07:27 + 07:28 + 07:29 + 07:31 WIB):
++3 briefs (32. UK, 33. Brasilia, 34. Dakar) supaya ketiga kolom MORE
+STORIES selaras atas-bawah — 21 briefs, 7 baris per kolom, 34 cerita;
+region EUROPE 8, THE AMERICAS 3, AFRICA 4. Baris brief kini TINGGI
+VARIABEL (brief terpanjang di baris itu × leading): tiap baris mulai di
+y yang sama di ketiga kolom; kolom mulai y=719 dan berakhir y=956–959
+(selisih 3 px hanya descender huruf "y" di "briefly", baseline sama).
+Baris ke-7 kini 3/3/3 baris: brief 27 ditulis ulang ("A bill against
+transnational repression is drafted." — draf amandemen Anti-Infiltration
+Act dikirim MOJ ke Cabinet, diumumkan di sidang 18 Nov, dilapor Taipei
+Times 19 Nov) dan brief 34 diperpanjang ("Faye ordered the budget bill
+into force by decree.") supaya sama dengan 3 baris brief 20. Brief 32
+dilabel "UK" (bukan "London") supaya muat 2 baris, mengikuti label
+"US" di brief 22; dot-nya di-skip karena tabrakan pin Den Haag dan
+tercatat di log. Supaya baris ke-7 muat, bagian atas dipadatkan 35 px
+tanpa mengecilkan font dan tanpa mengubah peta: masthead 100→96,
+region bar 36→32, numbers strip 58→54, gambar hero 121→110 (box
+220→209), gambar kartu 70→64 (box 152→146) — semua subjek hero/kartu
+dicek ulang utuh di ukuran tampil. Margin dikit di atas baris brief
+pertama dan di bawah baris terakhir; garis pembatas navy 2 px di atas
+band bawah; legenda peta bahasa Inggris ("Numbered pin: story number /
+Gold star: Shenzhen summit / Small dot: other briefs"). Sources tambah
+AFP dan Taipei Times. DITOLAK sesudah verifikasi: Estonia tutup
+perbatasan (diumumkan 15–16 Nov, tutupnya 1 Des), mogok umum Spanyol
+(11 Nov), senator AS soal ancaman siber AI (Reuters 18 Nov), RUU
+Epstein (diteken 19 Nov 2025, bukan 2026).
