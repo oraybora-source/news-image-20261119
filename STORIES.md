@@ -17,13 +17,15 @@ out on purpose and are named in the DATE CHECK strip on the image.
 
 ## Cards (10)
 
-4. **Gaza — Ceasefire line.** Israeli push past Gaza ceasefire line.
+4. **Gaza — Ceasefire line.** Israel says it crossed Gaza line.
    Rare ground op; troops cross the ceasefire line.
    (Reuters, Al Jazeera)
 5. **Paris — Energy outlook.** IEA: energy shock reshapes world.
-   Hormuz crisis cost 2.8bn barrels of oil. (IEA, 19 Nov 2026 —
-   World Energy Outlook 2026 released 19 Nov; 2.8bn barrels lost
-   per IEA via SAFETY4SEA / Tutubi / The Edge)
+   Hormuz crisis puts 2.8bn barrels of oil at risk. (IEA, 19 Nov 2026 —
+   World Energy Outlook 2026 released 19 Nov; 2.8bn barrels per IEA via
+   SAFETY4SEA / Tutubi / The Edge — Birol harfiah "cumulative losses";
+   dibingkai "at risk" per audit v11 karena juri duel membaca "lost"
+   sebagai tidak masuk akal.)
 6. **The Hague — Genocide case.** ICJ verdict in Myanmar case.
    Judgment read today; Rohingya case at UN court.
    (Reuters, The Guardian)
@@ -38,7 +40,7 @@ out on purpose and are named in the DATE CHECK strip on the image.
     Museveni and Samia at launch; Double Q in Mpigi.
     (Reuters, NBS TV, Kampala Post)
 11. **Antalya — COP31 draft.** COP31 draft drops fossil fuel.
-    Draft drops fossil phase-out; 1.5°C may pass. (Reuters)
+    Draft drops fossil phase-out; 1.5°C at risk. (Reuters)
 12. **Prague — Media protest.** Prague protest for free media.
     Crowds demand free press; huge march in Prague. (Reuters, AP)
 13. **Kyiv — Missile deliveries.** Zelensky: US blocks missiles.
@@ -283,3 +285,26 @@ yang tersedia, slack 3 px). Diukur dari piksel: baris mulai
 717/759/787/815/857/885/913 di ketiga kolom, semua kolom berakhir
 y=955 — ritme identik. Set cerita, region counts, set kota peta,
 divider, margin, legenda, DATE CHECK, hero, dan kartu TIDAK berubah.
+
+v12 (20 Nov ~09:05 WIB, Kevin GAS "Perbaiki v12"; 3 perbaikan teks
+murah dari audit pasca-kerja v11 — duel v11 GATE GAGAL 0/6, mean
+0,40): (1) Hormuz "lost/cost" -> "at risk" di strip ("Barrels of oil
+at risk in Hormuz crisis") dan kartu 5 ("Hormuz crisis puts 2.8bn
+barrels of oil at risk"); angka 2.8bn + atribusi IEA tetap. Sumber
+harfiah: Birol (IEA) "cumulative losses of 2.8 billion barrels" via
+SAFETY4SEA/Tutubi/The Edge — "at risk" adalah bingkai ulang per
+rekomendasi audit karena juri membaca "lost" sebagai tidak masuk
+akal ("roughly a month of entire world consumption"). (2) Kartu 11
+"1.5°C may pass" -> "1.5°C at risk" (kata "goal" dibuang supaya muat
+2 baris di 13pt; judul "COP31 draft drops fossil fuel" tetap).
+(3) Kartu 4 "Israel pushes past Gaza line" -> "Israel says it
+crossed Gaza line" — wording audit ("says it pushed past") TIDAK
+muat 2 baris di 16pt bold (terpotong "pushed past Gaza…"), jadi
+kata kerja diganti "crossed" yang meminjam kata sumber ("troops
+cross the ceasefire line"). Dicek dengan fungsi wrap asli sebelum
+ditulis + assert kompositor lolos + crop 2x: keempat teks baru utuh,
+tidak kepotong, tidak menabrak elemen lain. Set cerita, region
+counts, urutan kartu/brief, peta, divider, margin, legenda, DATE
+CHECK, footer, hero, dan 13 kartu TIDAK berubah. Duel v12 TIDAK
+bisa jalan (OpenRouter 402 — duel TERBLOKIR), jadi gain [ESTIMASI]
++0,03–0,08 mean dari audit BELUM terverifikasi.

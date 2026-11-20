@@ -291,14 +291,27 @@ HEROES = [
 
 # Cards in reading order (numbers 4-13): city, title, file, s1, s2,
 # strip, region, focus_y.
+# v12 (20 Nov ~09:05 WIB, Kevin GAS "Perbaiki v12"; 3 perbaikan teks
+# murah dari audit pasca-kerja v11 — duel v11 GATE GAGAL, juri tidak
+# percaya "lost" di Hormuz + deck COP31 kontradiktif + headline Gaza
+# tanpa atribusi): Gaza "Israel pushes past Gaza line" -> "Israel says
+# it crossed Gaza line" (wording audit "says it pushed past" TIDAK
+# muat 2 baris di 16pt — "crossed" meminjam kata sumber "troops cross
+# the ceasefire line"); kartu 5 "cost 2.8bn barrels of oil" -> "puts
+# 2.8bn barrels of oil at risk" + strip "lost" -> "at risk" (angka
+# 2.8bn + atribusi IEA tetap; sumber harfiah Birol "cumulative
+# losses" — "at risk" adalah bingkai ulang per rekomendasi audit);
+# kartu 11 "1.5°C may pass" -> "1.5°C at risk" ("goal" dibuang supaya
+# muat 2 baris di 13pt). Layout, gambar, peta, divider, margin,
+# legenda, DATE CHECK, footer TIDAK berubah.
 CARDS = [
-    ("Gaza", "Israel pushes past Gaza line",
+    ("Gaza", "Israel says it crossed Gaza line",
      "media-generation-card-gaza-0-f096b08f-9edf-4908-b025-7a2ac5ab476f.png",
      "Rare ground op", "Troops cross the ceasefire line",
      "4 · GAZA · CEASEFIRE LINE", "MIDEAST", 0.50),
     ("Paris", "IEA: energy shock reshapes world",
      "media-generation-card-iea-weo-0-a7fea00f.png",
-     "Hormuz crisis cost 2.8bn", "barrels of oil",
+     "Hormuz crisis puts 2.8bn", "barrels of oil at risk",
      "5 · PARIS · ENERGY OUTLOOK", "WORLD", 0.50),
     ("The Hague", "ICJ verdict in Myanmar case",
      "media-generation-card-icj-0-011a1eeb-2b66-41b8-a944-1d5ddf9a0fda.png",
@@ -322,7 +335,7 @@ CARDS = [
      "10 · MPIGI · CAR PLANT", "AFRICA", 0.50),
     ("Antalya", "COP31 draft drops fossil fuel",
      "media-generation-card-cop31-0-b3cba7ef-38d6-43dc-b5ed-902701778d89.png",
-     "Draft drops fossil phase-out", "1.5°C may pass",
+     "Draft drops fossil phase-out", "1.5°C at risk",
      "11 · ANTALYA · COP31 DRAFT", "MIDEAST", 0.50),
     ("Prague", "Prague protest for free media",
      "media-generation-card-prague-0-85b675a9-6723-4533-ac21-802291588bd5.png",
@@ -377,7 +390,7 @@ BRIEFS = [
 NUMBERS = [
     ("$81.3bn", "Anthropic IPO — largest ever", "AMERICAS"),
     ("$83", "Anthropic IPO price", "AMERICAS"),
-    ("2.8bn", "Barrels of oil lost in Hormuz crisis", "WORLD"),
+    ("2.8bn", "Barrels of oil at risk in Hormuz crisis", "WORLD"),
     ("7.25%", "SARB holds repo rate", "AFRICA"),
     ("4.9%", "Australia jobless — highest", "OCEANIA"),
     ("$63,000", "Bitcoin slips below, down 2.7%", "WORLD"),
