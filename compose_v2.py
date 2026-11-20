@@ -139,6 +139,24 @@
 # over the remaining rows only, so the briefs sit level with the
 # map instead of starting ~14 px below it.
 #
+# v9 changes (20 Nov ~07:20 WIB, Kevin GAS 07:17 WIB "perbaiki kartu 5
+# dulu"): ATM 20 Nov 07:00 WIB membantah kartu 5 — "US approves $1.6bn
+# Ukraine aid" TIDAK ADA di berita mana pun; satu-satunya $1,6 miliar
+# adalah IMF, 16 Nov, bersyarat, bukan AS. Kartu 5 diganti dengan IEA
+# World Energy Outlook 2026 (rilis 19 Nov, IEA sendiri 05:00 UTC):
+# "IEA: energy shock reshapes world", Paris, region WORLD. Strip
+# "$1.6bn" diganti "2.8bn" (barrel minyak hilang akibat krisis Hormuz,
+# IEA via SAFETY4SEA/Tutubi/The Edge). Region counts: AMERICAS 3->2,
+# WORLD 3->4; pin 5 pindah Washington -> Paris. Ilustrasi kartu 5 baru
+# (gaya rumah; turbin angin + panel surya + matahari + globe; subjek
+# utuh dengan margin, dinormalisasi ke inner box v4: 3% sisi, 18% atas
+# supaya matahari tidak ketutup strip, 3% bawah). MORE STORIES (Kevin
+# 07:14 WIB "jangan ada gap, 3 kolom harus sama atas bawahnya"):
+# baris brief kini TINGGI TETAP (3 baris x leading) — semua kolom
+# mulai dan berakhir di y yang sama, baris ke-k mulai di y yang sama
+# di ketiga kolom; slack tidak lagi dibagi per kolom (itu yang bikin
+# barisnya zig-zag: kolom 2 rapat 2-6px, kolom 1 renggang 12-16px).
+#
 # Run:  python3 compose_v2.py   (needs Pillow; writes entry.png here)
 # The entrypoint main.py only copies entry.png — it never re-renders.
 
@@ -237,10 +255,10 @@ CARDS = [
      "media-generation-card-gaza-0-f096b08f-9edf-4908-b025-7a2ac5ab476f.png",
      "Rare ground op", "Troops cross the ceasefire line",
      "4 · GAZA · CEASEFIRE LINE", "MIDEAST", 0.50),
-    ("Washington", "US approves $1.6bn Ukraine aid",
-     "media-generation-card-ukraine-0-1bb1ae8f-f27e-4ca3-81ce-65f60fefa8a5.png",
-     "Approved Thursday:", "$1.6bn for Ukraine",
-     "5 · WASHINGTON · UKRAINE AID", "AMERICAS", 0.50),
+    ("Paris", "IEA: energy shock reshapes world",
+     "media-generation-card-iea-weo-0-a7fea00f.png",
+     "Hormuz crisis cost 2.8bn", "barrels of oil",
+     "5 · PARIS · ENERGY OUTLOOK", "WORLD", 0.50),
     ("The Hague", "ICJ verdict in Myanmar case",
      "media-generation-card-icj-0-011a1eeb-2b66-41b8-a944-1d5ddf9a0fda.png",
      "Judgment read today", "Rohingya case at UN court",
@@ -302,14 +320,14 @@ BRIEFS = [
 NUMBERS = [
     ("$81.3bn", "Anthropic IPO — largest ever", "AMERICAS"),
     ("$83", "Anthropic IPO price", "AMERICAS"),
-    ("$1.6bn", "US aid package for Ukraine", "AMERICAS"),
+    ("2.8bn", "Barrels of oil lost in Hormuz crisis", "WORLD"),
     ("7.25%", "SARB holds repo rate", "AFRICA"),
     ("4.9%", "Australia jobless — highest", "OCEANIA"),
     ("$63,000", "Bitcoin slips below, down 2.7%", "WORLD"),
 ]
 
-COUNTS = [("EUROPE", 7), ("THE AMERICAS", 3), ("ASIA-PACIFIC", 8),
-          ("MIDEAST", 5), ("AFRICA", 3), ("OCEANIA", 2), ("WORLD", 3)]
+COUNTS = [("EUROPE", 7), ("THE AMERICAS", 2), ("ASIA-PACIFIC", 8),
+          ("MIDEAST", 5), ("AFRICA", 3), ("OCEANIA", 2), ("WORLD", 4)]
 TOTAL = 31
 
 DATECHECK_MSG = ("All 31 stories are 19 November 2026 — Fed minutes, "
@@ -317,7 +335,7 @@ DATECHECK_MSG = ("All 31 stories are 19 November 2026 — Fed minutes, "
                  "all 18 Nov, left out.")
 SOURCES_LINE = ("Sources: Reuters · BBC · The Guardian · Fox News · ABS · "
                 "CoinGecko · Al Jazeera · gov.uk · TBS · Daily Star · ANI · "
-                "Kampala Post · NBS TV · ECOWAS · PropFlow360")
+                "Kampala Post · NBS TV · ECOWAS · PropFlow360 · IEA")
 
 # ---- map data ----
 # Simplified continent outlines (lon, lat), equirectangular.
@@ -392,6 +410,7 @@ PLACES = {
     "Mpigi": (32.3, 0.2),
     "Antalya": (30.7, 36.9),
     "Dakar": (-17.4, 14.7),
+    "Paris": (2.35, 48.85),  # v9: kartu 5 IEA WEO (markas IEA, Paris)
 }
 
 # Hand-tuned pin offsets (dx, dy in px) so clustered pins do not
@@ -890,27 +909,26 @@ def draw_briefs(d, x, y, w, total_h):
     groups = [list(range(i * per, (i + 1) * per)) for i in
               range(BRIEF_NCOLS)]
     avail = total_h - 24
+    # v9 (Kevin 07:14 WIB: "jangan ada gap, 3 kolom harus sama atas
+    # bawahnya"): FIXED ROW HEIGHT. v8 spread each column's slack
+    # over its own gaps, so the rows zig-zagged (measured on v8:
+    # col 1 gaps 12-16 px, col 2 gaps 2-6 px, col 3 gaps 10-13 px)
+    # even though tops (748) and bottoms (966) already matched.
+    # Every row is now exactly 3 lines tall, so row k starts at the
+    # same y in all three columns, tops and bottoms match, and the
+    # gaps are uniform. A brief of fewer lines leaves its empty
+    # space inside its own row (even leading, like a table).
+    row_h = 3 * BRIEF_LH
+    assert all(len(lines) <= 3 for (_, _, _, _, _, lines) in measured), \
+        "brief over 3 lines"
+    assert 6 * row_h <= avail, \
+        f"briefs do not fit: {6 * row_h} > {avail}"
     for ci, idxs in enumerate(groups):
         chunk = [measured[i] for i in idxs]
         bx = x + ci * (col_w + 12)
-        content = sum(len(lines) * BRIEF_LH
-                      for (_, _, _, _, _, lines) in chunk)
-        slack = avail - content
-        assert slack >= 0, f"briefs do not fit: {content} > {avail}"
-        n = len(chunk)
-        # v8 (Kevin: MORE STORIES sejajar sama peta): the first row
-        # starts exactly at y+24 (= the map top); the slack is spread
-        # over the remaining rows only.
-        if n > 1:
-            base, rem = divmod(slack, n - 1)
-            leads = [0] + [base + (1 if s < rem else 0)
-                           for s in range(n - 1)]
-        else:
-            leads = [0]
-        by = y + 24
         for si, (city, region, num_txt, city_txt, head_w, lines) in \
                 enumerate(chunk):
-            by += leads[si]
+            by = y + 24 + si * row_h
             ch = len(lines) * BRIEF_LH
             rc = REGION_COLORS[region]
             d.rectangle([bx, by + 2, bx + 5, by + ch - 2], fill=rc)

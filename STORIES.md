@@ -20,8 +20,10 @@ out on purpose and are named in the DATE CHECK strip on the image.
 4. **Gaza — Ceasefire line.** Israeli push past Gaza ceasefire line.
    Rare ground op; troops cross the ceasefire line.
    (Reuters, Al Jazeera)
-5. **Washington — Ukraine aid.** US approves $1.6bn Ukraine aid.
-   Approved Thursday: $1.6bn for Ukraine. (Reuters)
+5. **Paris — Energy outlook.** IEA: energy shock reshapes world.
+   Hormuz crisis cost 2.8bn barrels of oil. (IEA, 19 Nov 2026 —
+   World Energy Outlook 2026 released 19 Nov; 2.8bn barrels lost
+   per IEA via SAFETY4SEA / Tutubi / The Edge)
 6. **The Hague — Genocide case.** ICJ verdict in Myanmar case.
    Judgment read today; Rohingya case at UN court.
    (Reuters, The Guardian)
@@ -93,8 +95,8 @@ out on purpose and are named in the DATE CHECK strip on the image.
   Taiwan, Saudi Arabia) are skipped on collision and logged by the
   compositor — the stories are still in the briefs and the map still
   shows their region's pins.
-- Region counts: EUROPE 7, THE AMERICAS 3, ASIA-PACIFIC 8,
-  MIDEAST 5, AFRICA 3, OCEANIA 2, WORLD 3 — 31 in all.
+- Region counts: EUROPE 7, THE AMERICAS 2, ASIA-PACIFIC 8,
+  MIDEAST 5, AFRICA 3, OCEANIA 2, WORLD 4 — 31 in all.
 
 ## How the image was made
 
@@ -209,3 +211,23 @@ brief row now starts exactly at the map top — the slack is spread over
 the remaining rows only, so the briefs sit level with the map instead
 of starting ~14 px below it. Titles, texts, numbers and layout are
 otherwise unchanged.
+
+v9 (20 Nov ~07:20 WIB, Kevin GAS 07:17 WIB "perbaiki kartu 5 dulu"):
+ATM 20 Nov 07:00 WIB membantah kartu 5 — "US approves $1.6bn Ukraine
+aid" tidak ada di berita mana pun (satu-satunya $1,6 miliar adalah
+IMF, 16 Nov, bersyarat, bukan AS). Kartu 5 diganti IEA World Energy
+Outlook 2026 (rilis 19 Nov, IEA sendiri 05:00 UTC): Paris, "IEA:
+energy shock reshapes world", "Hormuz crisis cost 2.8bn barrels of
+oil" (2,8 miliar barel hilang, IEA via SAFETY4SEA/Tutubi/The Edge).
+Strip "$1.6bn" diganti "2.8bn / Barrels of oil lost in Hormuz
+crisis"; region AMERICAS 3→2, WORLD 3→4; pin 5 pindah Washington →
+Paris; dot "US" kini muncul di peta (dot 12, skip 0); Sources tambah
+IEA. Ilustrasi kartu 5 baru (turbin angin + panel surya + matahari +
+globe, gaya rumah; dinormalisasi ke inner box v4 supaya matahari
+utuh dan tidak ketutup strip). MORE STORIES (Kevin 07:14 WIB "jangan
+ada gap, 3 kolom harus sama atas bawahnya"): baris brief kini TINGGI
+TETAP (3 baris × leading) — baris ke-k mulai di y yang sama di
+ketiga kolom, atas dan bawah rata (sisa: baris terakhir kolom 2
+berakhir 12 px lebih bawah karena brief Brussels 3 baris vs Dakar/
+Saudi Arabia 2 baris — tidak bisa diratakan tanpa ubah teks brief).
+Hero, kartu lain, peta, DATE CHECK tidak berubah.
